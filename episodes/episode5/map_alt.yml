@@ -1,0 +1,723 @@
+episode: 5
+title: Episode 5
+subtitle: Fighting the War
+rankId: master-cadet
+nextRankId: defender
+isLastEpisode: true
+labels: !!inc/file ./episodes/global/_labels.yaml
+action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+
+# CHAPTER 1
+chapters:
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 1
+  # ----------------------------------------------
+  -
+    title: Chapter 1
+    subtitle: Monitoring Our Defenses
+    kind: chapter
+    slides:
+      # 1 Background Build in ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 0, content: ~1/c1-sky.svg }
+            - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
+            - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true}
+            - {depth: 4, content: $facilityLoop, loop: true }
+            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true}
+            - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
+            - {depth: 7, content: $eacmsBuild, jumpToEnd: true, cache: true }
+            - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
+            - {depth: 9, content: $changeBuild, jumpToEnd: true, cache: true }
+            - {depth: 10, content: $accessBuild, jumpToEnd: true, cache: true }
+            - {depth: 11, content: $visitorBuild, jumpToEnd: true, cache: true }
+        duration: {kind: time, seconds: 1 }
+      # 1 Dialogue Intro ==========================================
+      -
+        title: Monitoring Our Defenses
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Monitoring Our Defenses
+                body: Given enough effort, any moat can be bridged and any wall breached if defenders aren't ready to repel the enemy. This episode is about how we detect and respond to <a data-label="cyber_security_incident" class="new">Cyber Security Incidents</a> - actual attacks against our infrastructure.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue Lookout ==========================================
+      -
+        title: Keep a Sharp Lookout
+        duration: {kind: ux}
+        sfx:
+          - {content: ~5/CIN_PersonSneaking.mp3, delay: 500, volume: 0.08 }
+        movie:
+          layers:
+            - {depth: 12, content: e5_skittering.json }
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Keep a Sharp Lookout
+                body: All Defenders must be on the lookout for shady persons photographing our facilities, attempting to gain information via phone, email or other means, and doing otherwise shifty things. Disappearance of vehicle passes, personnel identification, uniforms, or <a data-label="bcsi">BCSI</a> is also suspicious. <br/><br/>Further, if you have <a data-label="electronic_access">Electronic Access</a> to <a data-label="crca">CRCAs</a>, keep an eye out for anything that doesn't seem right on your system. This includes windows or messages that you don't recognize, unusual system slowdowns, files out of place, or otherwise strange system behavior. <br/><br/>Report any of these promptly because an attack may be in progress.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue Monitoring ==========================================
+      -
+        title: Electronic Monitoring
+        duration: {kind: ux}
+        movie:
+          layers:
+            - {depth: 12, content: clear }
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Electronic Monitoring
+                body: 'Nearly all of our <a data-label="crca">CRCAs</a> generate events that may be indications of an attack. Unauthorized access, firewall alerts, failed logins, unexpected system changes, and detection of malicious code are just a few examples. <br/><br/>Our technical <a data-label="defenders">Defenders</a> - like Richard - must monitor and analyze these events to detect if they represent a <a data-label="cyber_security_incident">Cyber Security Incident</a>. In addition, they will perform regular <a data-label="vulnerability_assessment" class="new">Vulnerability Assessments</a> on our defenses to proactively look for security problems.'
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue Monitoring ==========================================
+      -
+        title: Guard Duty
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Guard Duty
+                body: All this monitoring is a big job that requires involvement from all <a data-label="defenders">Defenders</a>, so let's learn our duties.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Duties ==========================================
+      -
+        title: Duties
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP5CH1}
+        duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 2
+  # ----------------------------------------------
+  -
+    title: Chapter 2
+    subtitle: Marshalling the Response
+    kind: chapter
+    slides:
+      # 2 Dialogue Response ==========================================
+      -
+        title: Local and National Response
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Local and National Response
+                body: When our monitoring efforts detect an attack, the <a data-label="cip">Standards</a> require that we convene an <a data-label="team" class="new">Incident Response Team</a> to coordinate our efforts to repel the attackers and a <a data-label="csirp" class="new">Incident Response Plan</a> with processes that ensure we handle an attack swiftly and effectively. <br/><br/>An incursion on our territory might be part of a larger, coordinated attack against the <a data-label="bes">Bulk Electric System</a>, so our Incident Response Team must promptly report significant incidents to <a data-label="eisac" class="new">E-ISAC</a>, the organization that coordinates response to attacks at the national level.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 2 Dialogue Maintaining Readiness ==========================================
+      -
+        title: Maintaining Readiness
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Maintaining Readiness
+                body: We must test our <a data-label="csirp">Incident Response Plan</a> yearly with a simulation and use our lessons-learned to improve the plan. Other events may cause the <a data-label="csirp">Plan</a> to change - like employees moving out of roles - so we must keep the information in the plan up-to-date.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 2 Dialogue No Simulation ==========================================
+      -
+        title: No Need for Simulation
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: No Need for Simulation
+                body: Many of us will have defined roles on the <a data-label="team">Incident Response Team</a>, help approve the <a data-label="csirp">Incident Response Plan</a>, or be involved in yearly testing. During an actual attack, any <a data-label="defenders">Defender</a> may be called upon for support, so we must all be ready. <br/><br/>Our facility Defenders have already been detecting and responding to <a data-label="cyber_security_incident">Cyber Security Incidents</a> in each simulated attack, so we'll skip the simulator for this chapter.
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
+      # 2 Sektimus Interlude General Awareness A ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .15, slot: ambience} }
+        sfx:
+          - {content: ~3/CIN_Quarantine.mp3, delay: 13600, volume: .1 }
+        movie:
+          layers:
+            - {depth: 12, content: ~5/6_1_alt_sektimus_intercept.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: l }
+            - {action: m }
+          actions:
+            a:
+              pos: [270,300]
+              text: Wait… I sense a disturbance in the Core. Someone I've not felt for a long time…
+              audio: ~g/Story_6alt_Ctanlee_1.mp3
+            b:
+              pos: [370,300]
+              emo: surprise
+              text: We're receiving a communication. It's much too powerful.
+              audio: ~g/Story_6alt_Ctanlee_2.mp3
+            c:
+              audio: ~g/Story_6alt_Warcore_1.mp3
+              actor: warcore
+              text: Signal captured. Starting live feed.
+            d:
+              audio: ~g/Story_6alt_Sektimus_1.mp3
+              actor: sektimus
+              text: Where are you little mind? What did the humans call you long ago? … WarMind? Such a pretentious name.
+            e:
+              pos: [370,400]
+              text:  It's Sektimus...
+              audio: ~g/Story_6alt_Ctanlee_3.mp3
+            f:
+              actor: sektimus
+              text: My, my, my - you HAVE been busy. … No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and now it is perfe-
+              audio: ~g/Story_6alt_Sektimus_2.mp3
+            g:
+              actor: sektimus
+              text: What is this? Who are you? A human. You've already loaded a human into your pitiful training system!
+              audio: ~g/Story_6alt_Sektimus_3.mp3
+            h:
+              actor: sektimus
+              text: Listen to me, human. Fighting me will only prolong your suffering. My forces on Earth are already undermining your Bulk Electric System, preparing the way for my Metal Swarm.
+              audio: ~g/Story_6alt_Sektimus_4.mp3
+            i:
+              actor: sektimus
+              text: CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth.
+              audio: ~g/Story_6alt_Sektimus_5.mp3
+            j:
+              emo: right
+              pos: [270,400]
+              text: All words and no action, Sektimus.
+              audio: ~g/Story_6alt_Ctanlee_4.mp3
+            k:
+              pos: [270,400]
+              text: This Cadet has a facility that has defeated every attack your robots are programmed with.
+              audio: ~g/Story_6alt_Ctanlee_5a.mp3
+            l:
+              pos: [270,400]
+              text: If you can give us an attack that our CIP defenses can't handle then we'll concede that this CIP training is futile and no match for your power.
+              audio: ~g/Story_6alt_Ctanlee_5b.mp3
+            m:
+              pos: [270,400]
+              text: Cadet, do you accept this challenge with me?
+              audio: ~g/Story_6alt_Ctanlee_5c.mp3
+        duration: {kind: dialogue }
+      # 2 Sektimus Are you Ready? ==========================================
+      - !!inc/file ./episodes/episode4/yaml/_simple-sektimus-e5.yaml
+      # 2 Sektimus Interlude General Awareness B ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 12, content: ~5/6_2_alt_sektimus_intercept.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              actor: sektimus
+              text: I accept the challenge as well…
+              audio: ~g/Story_6alt_Sektimus_6.mp3
+            b:
+              actor: sektimus
+              text: I'm uploading scripts that contain an attack your Cadet cannot defeat.
+              audio: ~g/Story_6alt_Sektimus_7.mp3
+            c:
+              emo: right
+              pos: [270,400]
+              text: WarCore, can you scan this signal for Malware?
+              audio: ~g/Story_6alt_Ctanlee_6.mp3
+            d:
+              actor: warcore
+              text: Scanning. Signal Clean. CTANLEE, these appear to be simple parameters for configuring my simulator with a new attack.
+              audio: ~g/Story_6alt_Warcore_2.mp3
+        duration: {kind: dialogue }
+      # 2 BotTron Attack ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_BotTronAttack.mp3, delay: 3300, volume: 0.2, slot: ambience} }
+        sfx:
+          - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
+        movie:
+          layers:
+            - {depth: 0, content: red-sky.svg }
+            - {depth: 12, content: 6_2_bot_battle.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: m }
+            - {action: n }
+            - {action: o }
+          actions:
+            a:
+              pos: [570,400]
+              text: WarCore, run the challenge script.
+              audio: Story_6_Ctanlee_4.mp3
+            b:
+              next: 3500
+              pos: []
+            c:
+              emo: angry
+              pos: [700,250]
+              text: What is this?
+              audio: Story_6_Ctanlee_5.mp3
+            d:
+              text: "A little surprise just for you old friend."
+              audio: Story_6_Sektimus_3.mp3
+              actor: sektimus
+            e:
+              pos: []
+              next: 6000
+            f:
+              emo: down
+              next: 6000
+              pos: [270,470]
+              text: The Incident Response Team has been convened. This is definitely a Cyber Security Incident.
+              audio: Story_6_Ctanlee_6.mp3
+            g:
+              next: 3000
+              pos: [270,200]
+              text: How are they going to respond?
+              audio: Story_6_Ctanlee_7.mp3
+            h:
+              emo: down
+              next: 1500
+              pos: [270,200]
+            i:
+              pos: [170,500]
+              text: Good call, team. Get the people out.
+              audio: Story_6_Ctanlee_8.mp3
+            j:
+              next: 6000
+              pos: []
+            k:
+              pos: []
+              audio: Story_6_Sektimus_4.mp3
+              actor: sektimus
+              text: "I'll now accept your concession CTANLEE, and your resignation from the training program, human. [still chuckling]"
+            m:
+              pos: [270,220]
+              text: Not so fast, Sektimus. The wager was against all the CIP Standards and we still have one training chapter left.
+              audio: Story_6_Ctanlee_10.mp3
+            n:
+              pos: []
+              audio: Story_6_Sektimus_5.mp3
+              actor: sektimus
+              text: "It matters not. Complete your worthless training. I'll observe."
+            o:
+              pos: [270,300]
+              text: Hold your head high, Cadet. We're not beaten yet.
+              audio: Story_6_Ctanlee_11.mp3
+        duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 3
+  # ----------------------------------------------
+  -
+    title: Chapter 3
+    subtitle: Recovering From Battle
+    kind: chapter
+    slides:
+      # 3 Dialogue Recovery Plan ==========================================
+      -
+        title: The Recovery Plan
+        movie:
+          layers:
+            - {depth: 0, content: ~1/c1-sky.svg }
+            - {depth: 12, content: 6_3_0_devastation.json }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: The Recovery Plan
+                body: After an attack, assets may be damaged (or incinerated), so we must have a <a data-label="recovery" class="new">Recovery Plan<a/> that helps our <a data-label="defenders">Defenders<a/> restore functionality quickly. The Recovery Plan defines the data backups, spare equipment and parts, and steps needed to restore each type of <a data-label="crca">CRCA<a/>. The Plan also guides Defenders on how to preserve forensic data from the attack useful for subsequent investigations. <br/><br/>We are expected to keep our Recovery Plan up-to-date and test it yearly, often concurrently with the yearly test of our <a data-label="csirp">Incident Response Plan</a>. We must also regularly test that our data backups are working and usable for recovery purposes.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 3 Dialogue Yes We Can ==========================================
+      -
+        title: Yes We Can!
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Yes We Can!
+                body: <a data-label="defenders">Defender</a>, it's time to put our <a data-label="recovery">Recovery Plan</a> into action and repair our facility.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 3 Simulation Recovery ==========================================
+      -
+        sfx:
+          - {content: ~5/CIN_FacilityRecovery.mp3, delay: 7500, volume: 0.08 }
+        movie:
+          layers:
+            - {depth: 12, content: 6_3_1_rebuild_sektimus_dialogue.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              next: 15000
+              pos: []
+            b:
+              audio: Story_6_Sektimus_6.mp3
+              actor: sektimus
+              text: CTANLEE, this means nothing. I'll just send my Bot-Tron back.
+            c:
+              next: 1000
+              pos: []
+            d:
+              pos: [550,300]
+              text: "Defender, please pick your NERC Bot-Tron Defense."
+              audio: Story_6_Ctanlee_12.mp3
+        duration: {kind: dialogue }
+      # 3 Sektimus Nerc Defense Selector ? ==========================================
+      - !!inc/file ./episodes/episode5/yaml/_fake-nerc-defense-selector.yaml
+      # 3 Sektimus Nerc Defense Selector ? ==========================================
+      - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
+      # 3 Animate Nerc Build ==========================================
+      -
+        action: {cmd: ctanlee.gohome}
+        sfx:
+          - {content: $nercSFX, volume: 1}
+        movie:
+          layers:
+            - {depth: 14, content: $nercBuild }
+        duration: {kind: time, seconds: 4 }
+      # 3 Sektimus Interlude ==========================================
+      -
+        sfx:
+          - {content: ~g/MU_BotTronDefenseMusic.mp3, volume: 0.2, loop: true }
+        movie:
+          layers:
+            - {depth: 13, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
+            - {depth: 14, content: $nercPass, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              next: 8000
+              pos: []
+            b:
+              pos: []
+              audio: Story_6_Sektimus_8.mp3
+              actor: sektimus
+              text: No, no no no no. Nooooooo!
+            c:
+              next: 2000
+              pos: []
+            d:
+              pos: []
+              audio: Story_6_Sektimus_9.mp3
+              actor: sektimus
+              text: You sunk my Bot-Tron Overlord!
+        duration: {kind: ux }
+      # 3 Sektimus Interlude ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 14, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
+            - {depth: 15, content: sektimus_goodbye.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+          actions:
+            a:
+              next: 1000
+              pos: []
+            b:
+              pos: []
+              audio: Story_6_Sektimus_10.mp3
+              actor: sektimus
+              text: Perhaps I was … premature … in my earlier judgment. Human, you performed at a higher level than I calculated possible. You are a worthy opponent.
+            c:
+              pos: []
+              audio: Story_6_Sektimus_11.mp3
+              actor: sektimus
+              text: So much the better. I prefer a good challenge.
+            d:
+              pos: []
+              audio: Story_6_Sektimus_12.mp3
+              actor: sektimus
+              text: I will keep my eyes on you - all of them. My swarm is not far and we shall meet again on the real battlefield.
+            e:
+              pos: [270,300]
+              text:  Not many have the courage to stare Sektimus in the eyes and challenge him. Well fought. Let's complete your training.
+              audio: Story_6_Ctanlee_17.mp3
+        duration: {kind: dialogue }
+      # 3 Duties ==========================================
+      #-
+      #  action: {cmd: ctanlee.gohome}
+      #  ux:
+      #    components:
+      #      -
+      #        kind: duties
+      #        config: {definition: EP5CH3}
+      #  duration: {kind: ux}
+      # 3 Quiz ==========================================
+      -
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: quiz
+              config:
+                source: sample
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 4
+  # ----------------------------------------------
+      # 4 Shutting Down slide ==========================================
+      -
+        action: [{cmd: ctanlee.show}]
+        movie:
+          layers:
+            - {depth: 14, content: clear }
+            - {depth: 15, content: clear }
+            - {depth: 12, content: $nercBuild, jumpToEnd: true, cache: true }
+            - {depth: 13, content: 6_6_defenders_enter.json, events: [complete] }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          actions:
+            a:
+              pos: [513,384]
+              next: 2000
+            b:
+              emo: down
+              pos: [513,384]
+              text: "WarCore … it's time."
+              audio: Story_7_Ctanlee_1.mp3
+            c:
+              actor: warcore
+              text: "Shutting down Simulator."
+              audio: Story_7_Warcore_1.mp3
+        duration: {kind: listen, event: layer.13.complete }
+      # 4 -12,13 Clear ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 4, content: clear }
+            - {depth: 12, content: clear }
+            - {depth: 11, content: clear }
+            - {depth: 10, content: clear }
+        duration: {kind: listen, event: layer.13.complete }
+      # 4 -9,10,11 Clear ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 9, content: clear }
+            - {depth: 8, content: clear }
+            - {depth: 7, content: clear }
+            - {depth: 6, content: clear }
+        duration: {kind: listen, event: layer.13.complete }
+      # 4 - 3,4,5,6 Clear ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 5, content: clear }
+        duration: {kind: listen, event: layer.13.complete }
+      # 4 - 3,4,5,6 Clear ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 3, content: clear }
+        duration: {kind: listen, event: layer.13.complete }
+      # 4 - 0,1,2 Clear ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 0, content: clear }
+            - {depth: 1, content: clear }
+            - {depth: 2, content: clear }
+        duration: {kind: listen, event: layer.13.complete }
+      # 4 Defender Build Out ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 13, content: 6_6_defenders_blink_out.json, events: [complete] }
+        duration: {kind: listen, event: layer.13.complete }
+      # 4 Movie ==========================================
+      -
+        sfx:
+          - {content: ~g/SFX_Level_Defender.mp3, volume: 1}
+        movie:
+          layers:
+            - {depth: 13, content: 7-Conclusion.mp4 }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+          actions:
+            a:
+              pos: []
+              next: 7000
+            b:
+              pos: [500,600]
+              text: "Our training comes to an end…"
+              audio: Story_7_Ctanlee_2.mp3
+            c:
+              emo: left
+              pos: [700,384]
+              text: " …and you have earned the title of Defender."
+              audio: Story_7_Ctanlee_3.mp3
+            d:
+              emo: down
+              pos: [700,384]
+              text: "I know you will wear this title and perform your duties with honor."
+              audio: Story_7_Ctanlee_4.mp3
+            e:
+              pos: [700,384]
+              text: "Now it's time for you to leave the WarCore and protect your infrastructure."
+              audio: Story_7_Ctanlee_5.mp3
+            f:
+              emo: left
+              pos: [513,240]
+              text: "but You will not be alone in this fight. Even now many Defenders are being prepared to stand with you."
+              audio: Story_7_Ctanlee_6.mp3
+            g:
+              emo: down
+              pos: [650,350]
+              text: "Defenders both at your organization"
+              audio: Story_7_Ctanlee_7.mp3
+            h:
+              emo: right
+              pos: [300,450]
+              text: "…and at many other organization just like yours."
+              audio: Story_7_Ctanlee_8.mp3
+            i:
+              pos: [513,240]
+              text: "You and your fellow Defenders truly are this planet's greatest hope."
+              audio: Story_7_Ctanlee_9.mp3
+        duration: {kind: dialogue }
+      # 4 Doors ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 14, content: 6_6_defenders_doors.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              pos: [513,384]
+              next: 1200
+            b:
+              pos: [513,384]
+              text: "Now go out and protect your infrastructure. Farewell, Defender."
+              audio: Story_7_Ctanlee_10.mp3
+        duration: {kind: dialogue }
+      # 4 Ctanlee Gone ==========================================
+      -
+        action: [{cmd: ctanlee.hide}]
+        duration: {kind: time, seconds: 2 }

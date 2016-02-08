@@ -1,0 +1,80 @@
+title: Choose your PACS
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [50, 70]
+  actions:
+    a:
+      emo: happy
+      text: "Smile for the card photo."
+      audio: Story_3_Ctanlee_4.mp3
+    b:
+      emo: happy
+      text: "Ah, a kindred defensive AI."
+      audio: Story_3_Ctanlee_5.mp3
+    c:
+      emo: surprize
+      text: "Robots and water. A good mix."
+      audio: Story_3_Ctanlee_6.mp3
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: Physical Access Control System
+          choice: pacs
+        click:
+          - {cmd: slides.next-slide}
+        intro:
+        hasLabels: true
+        title: Choose your PACS
+        subTitle: The only access to the facility  <a data-label="crca">CRCAs</a> is through the door, so let's install a  <a data-label="cip">CIP</a>-compliant physical access control on the door to create a  <a data-label="psp">Physical Security Perimeter</a> around your assets.
+        submitBtn: {txt: Install, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  pacs: card-scanner
+                  pacsBuild: ~2/card_scanner_build.json
+                  pacsPass: ~2/card_scanner_pass.json
+                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_TheCardGuardXT.mp3
+            btnTxt: The Card Guard XT
+            icon: mini-card-scanner
+            blurb: "Uses personal ID badge to confirm user against database."
+            details: "Personalized Lanyard Coolness Factor <br/>-3 Bad Photo Penalty <br/>+10 Robot Articulation Challenge"
+            quote: I'm gonna need to see some ID
+          -
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: setvars
+                data:
+                  pacs: hal-scanner
+                  pacsBuild: ~2/hal_scanner_build.json
+                  pacsPass: ~2/hal_scanner_pass.json
+                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_HAL9000EyeScanner.mp3
+            btnTxt: HAL 9000 Eye Scanner
+            icon: mini-hal-scanner
+            blurb: "Uses optical recognition to match user against database."
+            details: "+2 Style Points <br/>Eye of the Beholder Bonus <br/>+5 Robot Recognition"
+            quote: I'm sorry Dave, but I can't let you in without proper access.
+          -
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: setvars
+                data:
+                  pacs: kraken-scanner
+                  pacsBuild: ~2/kraken_scanner_build.json
+                  pacsPass: ~2/kraken_scanner_pass.json
+                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_WateryGraveKrakenSensor.mp3
+            btnTxt: Watery Grave Kraken Sensor
+            icon: mini-kraken-scanner
+            blurb: "Kraken tentacle analyzes user body shape against database."
+            details: "+5 Facility Envy Points <br/>Enemy Intimidation Bonus <br/>10% Chance of Robot Electrocution"
+            quote: Don't forget to bring a towel.

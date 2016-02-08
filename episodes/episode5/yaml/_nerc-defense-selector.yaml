@@ -1,0 +1,79 @@
+title: Removing Access
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [220, 60]
+  actions:
+    a:
+      emo: happy
+      text: "Crikey!"
+      audio: Story_6_Ctanlee_13.mp3
+    b:
+      emo: happy
+      text: "Stay on target."
+      audio: Story_6_Ctanlee_14.mp3
+    c:
+      emo: surprize
+      text: "Gravity kills."
+      audio: Story_6_Ctanlee_15.mp3
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: NERC Defense
+          choice: nerc
+        click:
+          - {cmd: slides.next-slide}
+        intro:
+        title: Choose your NERC Bot-Tron Defense
+        subTitle: "The Incident Response Team reported the threat to E-ISAC. From this information and the forensic data we provided from the recovery, NERC designed several Bot-Tron Overlord defenses. <br/>Time to kick some bot."
+        submitBtn: {txt: Install, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  nerc: brit_beacon
+                  nercBuild: ~5/brit_beacon_build.json
+                  nercPass: ~5/brit_beacon_pass.json
+                  nercSFX: ~5/SFX_Brit_Defense.mp3
+            btnTxt: Brit Beacon, Scholar. Gentleman. Bot Hunter.
+            icon: mini-brit-beacon
+            blurb: "<span>Moustache Length:</span> +4 inches <br/><span>Rifle Name:</span> Lord Brimstone"
+            details: "Dog's Bullocks! Hire NERC's greatest living robot fighter (and his legendary rifle) from the other side of the pond to take care of your robot problem. The first human to ever kill a Bot-Tron Overlord, he's not called the Can Opener for nothing."
+            quote: Robots need to be shot and by Jove, I'm the one to shoot them!
+          -
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: setvars
+                data:
+                  nerc: speeder
+                  nercBuild: ~5/speeder_build.json
+                  nercPass: ~5/speeder_pass.json
+                  nercSFX: ~5/SFX_Speeder_Defense.mp3
+            btnTxt: Speeder with Tow Cables
+            icon: mini-speeder
+            blurb: "<span>Tow Cable Length:</span> 800 meters <br/><span>Last deployed:</span> Planet Hoth"
+            details: "Imported by NERC from a galaxy far, far away, these reconfigured speeders have already seen action against many-limbed attackers like our Bot-Tron Overlord. Travelling around a Bot-Tron ain’t like dustin’ crops, but pilot Harrison Groundrunner will bring this thing to its knees … errr joints."
+            quote: Witness the power of this fully operational tow cable!
+          -
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: setvars
+                data:
+                  nerc: orbital_strike
+                  nercBuild: ~5/orbital_strike_build.json
+                  nercPass: ~5/orbital_strike_pass.json
+                  nercSFX: ~5/SFX_Kinetic_Defense.mp3
+            btnTxt: Kinetic Orbital Strike
+            icon: mini-orbital-strike
+            blurb: "<span>Size:</span> Classified <br/><span>Use:</span> Classified <br/><span>Material:</span> Classified <br/><span>Launching Satellite:</span> Classified"
+            details: "Part of NERC's secret [Classified] program, this weapon drops [Classified] rods from satellites. Gravity increases the speed of the rods to Mach [Classified] until they impact the target causing [Classified]-level destruction. [Classified] guidance system ensures precision targeting."
+            quote: When you care enough to send the very best.

@@ -1,0 +1,103 @@
+{
+  "urls": [
+    "./sprites/episode3/chapter1/sprite.mp3"
+  ],
+  "sprite": {
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "~3/CIN_TreeMoving.mp3": [
+      28250,
+      679.1836734693889
+    ],
+    "~3/CIN_RobotTossing.mp3": [
+      29500,
+      1253.877551020409
+    ],
+    "~3/CIN_HumanWalking.mp3": [
+      31750,
+      2063.6734693877515
+    ],
+    "~3/CIN_Whistling.mp3": [
+      35000,
+      3813.8775510204114
+    ],
+    "~g/SFX_AttackSlamdown_FlashBot.mp3": [
+      39250,
+      2586.1224489795945
+    ],
+    "~3/CIN_DoorOpen.mp3": [
+      42500,
+      1097.142857142856
+    ],
+    "~3/2001_Space.mp3": [
+      44750,
+      15568.979591836736
+    ],
+    "~3/CIN_TransmisionLinesBurning.mp3": [
+      61000,
+      2716.734693877548
+    ],
+    "Story_4_Ctanlee_1.mp3": [
+      64250,
+      3030.2040816326466
+    ],
+    "Story_4_Ctanlee_2.mp3": [
+      68500,
+      5172.244897959189
+    ],
+    "Story_4_Ctanlee_3.mp3": [
+      74750,
+      1358.3673469387777
+    ],
+    "Story_4_Ctanlee_4.mp3": [
+      77000,
+      2951.8367346938703
+    ],
+    "Story_4_Ctanlee_5.mp3": [
+      80250,
+      4362.4489795918325
+    ],
+    "Story_4_Ctanlee_6.mp3": [
+      85500,
+      3552.6530612244896
+    ],
+    "~3/SFX_PhysicalPortSecurity_DuctTape.mp3": [
+      89750,
+      2377.1428571428573
+    ],
+    "~3/SFX_PhysicalPortSecurity_TheKragle.mp3": [
+      93000,
+      2377.1428571428573
+    ],
+    "~3/SFX_PhysicalPortSecurity_PortUmpie.mp3": [
+      96250,
+      2377.1428571428573
+    ],
+    "Story_4_Ctanlee_7.mp3": [
+      99500,
+      4649.795918367346
+    ],
+    "Story_4_Ctanlee_8.mp3": [
+      104750,
+      2403.265306122449
+    ],
+    "~3/CIN_FlashDriveRejection.mp3": [
+      108000,
+      1097.142857142856
+    ],
+    "~3/CIN_HumanTossing.mp3": [
+      110250,
+      783.6734693877503
+    ],
+    "Story_4_Ctanlee_10.mp3": [
+      111500,
+      2560.0000000000023
+    ],
+    "Story_4_Ctanlee_11.mp3": [
+      114750,
+      1358.3673469387777
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+title: Will you stop training?
+duration: {kind: ux}
+ux:
+  components:
+    -
+      kind: simple-selection
+      config:
+        title: Will you stop training?
+        items:
+          -
+            btnTxt: Thanks for thinking of me, but I can't accept your offer.
+            click:
+              - {cmd: slides.next-slide}
+          -
+            btnTxt: I’m sorry, your query was not recognized.
+            click:
+              - {cmd: slides.next-slide}
+          -
+            btnTxt: I have neither the time nor the crayons to respond to your question.
+            click:
+              - {cmd: slides.next-slide}

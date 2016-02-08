@@ -1,0 +1,36 @@
+action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+duration: {kind: dialogue}
+# movie:
+#   layers:
+#     - {depth: 5, content: interior_loop.json, loop: true }
+dialogue:
+  timeline:
+    - {action: a }
+    - {action: b }
+    - {action: c }
+    - {action: d }
+    - {action: e }
+  defaults:
+    next: audio
+  actions:
+    a:
+      pos: [200, 200]
+      emo: happy
+      next: 1500
+    b:
+      pos: [200, 500]
+      emo: left
+      next: 1500
+    c:
+      pos: [400, 350]
+      emo: right
+      next: 1500
+    d:
+      pos: [600, 300]
+      emo: down
+      next: 3000
+    e:
+      pos: [400, 200]
+      emo: happy
+      text: Excellent choice, Cadet! This is one fine facility.
+      audio: Story_2_Ctanlee_4.mp3

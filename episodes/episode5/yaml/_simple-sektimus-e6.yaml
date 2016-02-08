@@ -1,0 +1,22 @@
+fid: ep5-ch2-sektimus-normal-selector
+title: Do you accept this challenge?
+duration: {kind: ux}
+ux:
+  components:
+    -
+      kind: simple-selection
+      config:
+        title: Are you ready?
+        items:
+          -
+            btnTxt: I was born ready.
+            click:
+              - {cmd: slides.next-slide}
+          -
+            btnTxt: Come and get some!
+            click:
+              - {cmd: slides.next-slide}
+          -
+            btnTxt: Bring it on and bow to my facility.
+            click:
+              - {cmd: slides.next-slide}

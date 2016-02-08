@@ -1,0 +1,96 @@
+cip:
+  title: "Critical Infrastructure Protection (CIP)"
+  text: "Official standards created under order of the government and direction of NERC that give utilities guidance on how to protect the North American Electric Bulk Electric System from cyber-attack."
+bes:
+  title: "Bulk Electric System (BES)"
+  text: "The significant power plants, transmission lines, and associated equipment that make up North American's large interconnected electrical system. Excludes distribution systems."
+nerc:
+  title: "North American Electric Reliability Corporation (NERC)"
+  text: "NERC is a non-profit formed by utilities to improve the reliability of the Bulk Electric System and secretly tasked by the government to prepare the industry for the coming metallic onslaught."
+high:
+  title: "High Impact"
+  text: "High Impact facilities are large Control Centers and Backup Control Centers. This includes data centers that house cyber assets used for Control Center operations."
+medium:
+  title: "Medium Impact"
+  text: "Medium Impact facilities are significant generation plants, transmission stations and substations, and smaller control centers."
+low:
+  title: "Low Impact"
+  text: "Low Impact facilities are the smaller plants, transmission stations and substations, and other control centers not classified as High Impact and Medium Impact."
+cyber_assets:
+  title: "Cyber Assets"
+  text: "Programmable electronic devices, including the hardware, software, and data in those devices. These includes control systems, relays, servers, workstations, laptops, handheld devices, and anything else that acts like a computer."
+bca:
+  title: "BES Cyber Assets (BCA)"
+  text: "Servers, workstations or other programmable devices that will cause real-time operational problems for the Bulk Electric System if they are hacked, attacked, or disabled. Examples include: control systems, energy management system servers, relay devices, and operator workstations."
+pca:
+  title: "Protected Cyber Assets (PCA)"
+  text: "Any servers, workstations, or other programmable devices connected to the same network as BCA but that don't have a real-time impact on the Bulk Electric System. Examples might include: file servers, network printers, and tape backup servers."
+bcsi:
+  title: "BES Cyber System Information (BCSI)"
+  text: "Information useful for an attacker planning an attack. Examples include maps, security plans, network diagrams, and configuration information stored on hard drives, file shares, and in filing cabinets."
+crca:
+  title: "CIP-Related Cyber Assets (CRCA)"
+  text: "A single term that covers all the crazy CIP acronyms for assets that have security requirements. CRCA is used to refer to these asset types: BES Cyber Assets, Protected Cyber Assets, Electronic Access and Monitoring Systems, and Physical Access Control Systems."
+electronic_access:
+  title: "Electronic Access"
+  text: "The ability to logon to workstations, servers, and other CRCAs."
+physical_access:
+  title: "Physical Access"
+  text: "The ability to open a door and enter a Physical Security Perimeter. Essentially, this means you have physical access to CRCAs."
+manager:
+  title: "CIP Senior Manager"
+  text: "Leads the CIP war efforts against the robots and our allies. Be sure to greet them with the official Fist-Bump SaluteTM if you pass in the hallway."
+defenders:
+  title: "Defenders"
+  text: "Individuals like you who have access to and are responsible for, maintain, support, or use CRCAs and BCSI. Examples: IT Manager, Network Tech, Substation Tech, System Operator, Control Room Operator, Flak-Cannon Engineer."
+cyber_security_program:
+  title: "Cyber Security Program"
+  text: "A document that describes how our people and defenses meet the CIP Standards. Auditors will use the Program document to evaluate our defenses. This training and your duties as a Defender is based on the Program."
+psp:
+  title: "Physical Security Perimeter (PSP)"
+  text: "The physical border surrounding locations in which CRCAs reside. This border is typically made up of walls, fences, and doors. Access through doors and other access points must be controlled."
+esp:
+  title: "Electronic Security Perimeter (ESP)"
+  text: "The logical border surrounding a network to which CRCA are connected. Electronic communication into and out of the ESP network must be controlled."
+information_access:
+  title: "Information Access"
+  text: "The ability to access file shares, filing cabinets, and other locations that have BCSI."
+user_account:
+  title: "User Account"
+  text: "An account that a Defender uses to verify their identity and log into a workstation, server, or other kind of CRCA. These accounts often use a username and password to verify the person, but other methods can be used. "
+shared:
+  title: "Shared Account"
+  text: "An single login account used by multiple employees."
+default:
+  title: "Default Account"
+  text: "An account that comes pre-configured by the manufacturer on a CRCA. These are commonly administrative accounts and sometimes share the same user name and password on all manufactured devices."
+brute:
+  title: "Brute-Force Attack"
+  text: "A trial-and-error method where an attacker tries to guess a user's password. Automated software is used to generate a large number of consecutive guesses."
+visitor:
+  title: "Visitor"
+  text: "Visitors are anyone who doesn't have Physical Access to a PSP but we want to allow them to go inside for tours, gauge reading, audits, and other short-term needs."
+visitor_escort:
+  title: "Visitor Escort Procedure"
+  text: "A procedure that ensures Visitors are documented, monitored, and continually escorted by a Defender at all times while inside a PSP."
+cyber_security_incident:
+  title: "Cyber Security Incident"
+  text: "Any malicious or suspicious event that attempts to disrupt the real-time operations of the Bulk Electric System."
+team:
+  title: "Incident Response Team"
+  text: "A group of Defenders gathered to coordinate the response to a cyber-attack."
+csirp:
+  title: "Cyber Security Incident Response Plan"
+  text: "A plan that gives guidance for how Defenders at an organization respond to a Cyber Security Incident."
+recovery:
+  title: "Recovery Plan"
+  text: "A plan that defines the data backups, spare equipment and parts, and steps needed to restore each type of CRCA after an attack."
+eisac:
+  title: "Electricity Information Sharing and Analysis Center (E-ISAC)"
+  text: "This organization is the primary security communications channel for the electricity sector and helps us prepare for and respond to cyber and physical threats, vulnerabilities, and incidents."
+vulnerability_assessment:
+  title: "Vulnerability Assessment"
+  text: "A process that identifies security holes (vulnerabilities) in our systems. Includes a security analysis of networks, CRCAs, and other systems an attacker may try to compromise."
+self-report:
+  title: "Self-Report"
+  text: "If we discover a potential non-compliance issue outside of an audit and report the issue to our regulator. We still may receive a violation, but regulators will look more favorably on self-reports than issues caught during an audit."

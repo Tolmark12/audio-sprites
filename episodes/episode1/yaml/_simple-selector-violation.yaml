@@ -1,0 +1,46 @@
+title: Choose Wisely
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [200, 50]
+  actions:
+    a:
+      emo: happy
+      text: "Not a good catch. Since the information actually left the facility, we have a real problem here."
+      audio: Story_2_Ctanlee_16.mp3
+    b:
+      emo: sad
+      text: "Nope. We didn't catch the issue ourselves."
+      audio: Story_2_Ctanlee_17.mp3
+    c:
+      emo: surprize
+      text: "Correct! This would be a violation. Let's try another example."
+      audio: Story_2_Ctanlee_X40.mp3
+ux:
+  components:
+    -
+      kind: simple-selection
+      config:
+        title: Choose Wisely
+        subTitle: Someone just left the facility with a picture of our mapboard. If an auditor learned of this, what would happen?
+        items:
+          -
+            btnTxt: Good Catch
+            click: {cmd: ctanlee.activate, data: a}
+          -
+            btnTxt: Self-Report
+            click: {cmd: ctanlee.activate, data: b}
+          -
+            btnTxt: Violation
+            # On Click, we add an event listener to ctanlee. After his audio is complete,
+            # we run all the actions listed below in "action"
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: ctanlee.add-event-listener
+                data:
+                  event: complete
+                  action:
+                    - {cmd: slides.next-slide}
+                    - {cmd: ctanlee.gohome}

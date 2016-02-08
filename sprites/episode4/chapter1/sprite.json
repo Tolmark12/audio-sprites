@@ -1,0 +1,123 @@
+{
+  "urls": [
+    "./sprites/episode4/chapter1/sprite.mp3"
+  ],
+  "sprite": {
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "~4/CIN_HumanExcited.mp3": [
+      28250,
+      2063.673469387755
+    ],
+    "~4/CIN_HumanWalking.mp3": [
+      31500,
+      2063.6734693877515
+    ],
+    "~4/CIN_DoorOpen.mp3": [
+      34750,
+      1097.142857142856
+    ],
+    "~g/SFX_AttackSlamdown_UnsavoryHuman.mp3": [
+      37000,
+      4571.42857142857
+    ],
+    "~4/CIN_RobotsMovingExplosion.mp3": [
+      42250,
+      5250.612244897959
+    ],
+    "Story_5_Ctanlee_1.mp3": [
+      48500,
+      14733.061224489795
+    ],
+    "Story_5_Ctanlee_2.mp3": [
+      63750,
+      3970.612244897964
+    ],
+    "Story_5_Ctanlee_3.mp3": [
+      68000,
+      2115.9183673469356
+    ],
+    "Story_5_Ctanlee_4.mp3": [
+      71250,
+      4336.32653061224
+    ],
+    "~3/Story_4_Ctanlee_3.mp3": [
+      76500,
+      1358.3673469387777
+    ],
+    "Story_5_Ctanlee_6.mp3": [
+      78750,
+      3552.6530612244896
+    ],
+    "Story_5_Ctanlee_7.mp3": [
+      83000,
+      2377.1428571428573
+    ],
+    "Story_5_Ctanlee_8.mp3": [
+      86250,
+      2246.5306122448965
+    ],
+    "~4/SFX_AccessControlSystem_BackgroundProbe.mp3": [
+      89500,
+      3317.55102040816
+    ],
+    "~4/SFX_AccessControlSystem_RiskDetector.mp3": [
+      93750,
+      2377.1428571428573
+    ],
+    "~4/SFX_AccessControlSystem_VoightKampfDetector.mp3": [
+      97000,
+      2377.1428571428573
+    ],
+    "~4/CIN_Typing.mp3": [
+      100250,
+      1593.469387755107
+    ],
+    "Story_5_Ctanlee_9.mp3": [
+      102500,
+      3160.8163265306075
+    ],
+    "Story_5_Ctanlee_10.mp3": [
+      106750,
+      4466.938775510201
+    ],
+    "Story_5_Ctanlee_11.mp3": [
+      112000,
+      7392.653061224493
+    ],
+    "~4/CIN_ScannerShock.mp3": [
+      120250,
+      5250.612244897965
+    ],
+    "Story_5_Ctanlee_12.mp3": [
+      126500,
+      4414.693877551031
+    ],
+    "Story_5_Ctanlee_13.mp3": [
+      131750,
+      5015.510204081636
+    ],
+    "Story_5_Ctanlee_14.mp3": [
+      138000,
+      1515.1020408163163
+    ],
+    "Story_5_Ctanlee_15_alt.mp3": [
+      140250,
+      4075.1020408163185
+    ],
+    "Story_5_Ctanlee_16.mp3": [
+      145500,
+      3813.877551020397
+    ],
+    "Story_5_Ctanlee_17.mp3": [
+      149750,
+      5720.81632653061
+    ],
+    "Story_5_Ctanlee_18.mp3": [
+      156000,
+      2377.1428571428714
+    ]
+  }
+}

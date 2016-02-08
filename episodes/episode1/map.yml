@@ -1,0 +1,713 @@
+episode: 1
+title: Episode 1
+subtitle: Organizing Our Defenses
+rankId: cadet
+nextRankId: cadet-first-class
+labels: !!inc/file ./episodes/global/_labels.yaml
+
+  # skipSlate: true
+chapters:
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 1
+  # ----------------------------------------------
+  -
+    title: Chapter 1
+    subtitle: Facilities and Cyber Assets
+    kind: chapter
+    slides:
+      # 1 Background Build in ==========================================
+      -
+        title: Facility Selector
+        movie:
+          layers:
+            - {depth: 0, content: c1-sky.svg }
+            - {depth: 1, content: c1-background-clouds-loop.json, loop: true }
+            - {depth: 2, content: c1_background_buildin.json, events: [complete], cache: true }
+        duration: {kind: listen, event: layer.2.complete}
+      # 1 Warcore slide ==========================================
+      -
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              emo: down
+              pos: [500,550]
+              text: "The simulator is loaded! Track your progress through the episode here. Now we just need a facility."
+              audio: Story_2_Ctanlee_X43.mp3
+        duration: {kind: dialogue }
+      # 1 Selector Facility ==========================================
+      - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
+      # 1 Selector Build ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: .2, slot: ambience} }
+        sfx:
+          - {content: $facilitySFX, volume: .1}
+        movie:
+          layers:
+            - {depth: 3, cache: true, content: $facilityBuild}
+            - {depth: 4, content: $facilityLoop, loop: true }
+            - {depth: 5, content: ~1/interior_build.json}
+        duration: {kind: time, seconds: 0.1}
+      # 1 Building Tour Ctanlee ==========================================
+      - !!inc/file ./episodes/episode1/yaml/_building-overview.yaml
+      # 1 Dialogue BES Cyber Assets  ==========================================
+      -
+        title: BES and Protected Cyber Assets
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: BES Cyber Assets
+                body: <a data-label="cip">CIP</a> gives us the task to protect <a data-label="bca" class="new">BES Cyber Assets (BCA)</a> - the critical equipment in our facilities that will cause real-time operational problems for the Bulk Electric System if they are hacked, attacked, or disabled. Any other computers and devices on the same network as <a data-label="bca">BCA</a> are called <a data-label="pca" class="new">Protected Cyber Assets (PCA)</a> and must also be protected. <br/><br/>The Compliance Team identified the <a data-label="bca">BCA</a> and <a data-label="pca">PCA</a> in this facility. It's time for an inspection - on the next screen click any of your assets to learn more about them.
+                btn:
+                  style: lightning
+                  text: inspect assets
+                  action: {cmd: slides.next-slide}
+                labels:
+                  a: {title: "BCA"}
+      # 1 Zoom Assets overview  ==========================================
+      -
+        action: {cmd: animations.go.high}
+        title: Asset Overview
+        movie:
+          layers:
+            - {depth: 6, content: asset_view.json }
+            - {depth: 7, content: asset_bca_pca_label.json }
+            - {depth: 8, content: asset_network_connections.json }
+        duration: {kind: time, seconds: 3 }
+
+      # 1 Highlight PCA BCA Equipment  ==========================================
+      -
+        action:
+          - {cmd: unhighlight.all }
+          - {cmd: label.hide, data: {id: all}  }
+          - {cmd: highlight, data: {id: con-sys, level: bca} }
+          - {cmd: highlight, data: {id: com-rack, level: bca} }
+          - {cmd: highlight, data: {id: control-ns, level: bca } }
+          - {cmd: highlight, data: {id: tape-back, level: bca} }
+          - {cmd: highlight, data: {id: c-app-server, level: bca} }
+          - {cmd: highlight, data: {id: c-app-server2, level: bca} }
+          - {cmd: highlight, data: {id: operator-ws, level: bca } }
+          - {cmd: highlight, data: {id: tech-ws, level: bca} }
+          - {cmd: highlight, data: {id: file-server, level: pca} }
+          - {cmd: highlight, data: {id: map-computer, level: pca} }
+          - {cmd: highlight, data: {id: printer, level: pca} }
+          - {cmd: continue.show, data: {css: bar-topper}}
+        duration: {kind: ux}
+        # 1 Equipment exploration component:
+        ux:
+          components:
+            -
+              kind: explore-cards
+              config:
+                meta:
+                  title: Asset Exploration
+                required-views: 0 # (number of cards they have to view to move on to next slide)
+                template: equipment
+                cards:
+                  -
+                    image: iStock_000017937355_Medium_b.jpg
+                    hit: con-sys-hit
+                    name: Control System
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: The facility control system is specialized hardware and software that controls the operation of a physical asset like a Breaker, Generator, or Tesla Cannon. For example, the system allows users to open and close breakers, ramp a generator up and down, and aim and fire the Tesla cannon. <span>I have the power!</span>
+                  -
+                    image: iStock_000024244345_Medium_c.jpg
+                    hit: com-rack-hit
+                    name: Communications Equipment
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: Dial-in modems, remote terminal units, and other equipment that allows remote monitoring and operation of the control system is in this rack. Typically these devices communicate to the primary and any backup control centers. These devices are treated independently by CIP, but we'll group them together for simplicity. <span>Reach out and touch some asset.</span>
+                  -
+                    image: iStock_000005695963_Medium_a.jpg
+                    hit: control-ns-hit
+                    name: Controls Network Switch
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: This network switch connects all the servers, workstations, and other cyber assets on the control system network. <span>Now we're talking! errr … electronically speaking.</span>
+                  -
+                    image: iStock_000013815869_Medium_e.jpg
+                    hit: tape-back-hit
+                    name: Tape Backup Server
+                    type: Protected Cyber Asset (PCA)
+                    network: ESP
+                    description: Servers can crash and data can be lost, so well-managed facilities like yours will have servers that make regular copies of data from other servers on the control system network. Since the Backup Server is on the same network as the BES Cyber Assets, we need to protect it. <span>Why do we fall? So we can learn to back our data up.</span>
+                  -
+                    image: iStock_000016348944_Medium_d.jpg
+                    hit: c-app-server-hit
+                    name: Control System Application Server 1
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: Most control systems have supporting software that collects data and builds sophisticated visualizations and displays for operators. This is the server that performs these functions in your facility. <span>I live to serve… except the part about being alive.</span>
+                  -
+                    image: iStock_000016348944_Medium_d.jpg
+                    hit: c-app-server2-hit
+                    name: Control System Application Server 2
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: Many control systems provide advanced functionality for operators of the control system through ancillary software. Some examples include advanced network modeling and sophisticated relaying systems. <span>Yeah, it looks the same as the other server. It's not.</span>
+                  -
+                    image: iStock_000018703133_Medium_j.jpg
+                    hit: operator-ws-hit
+                    name: Operator Workstation
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: This workstation allows the operator to log into the control system, view data, and issue controls. It's their primary tool for operating Bulk Electric System components. <span>Defined by Webster's Dictionary as "an extension of an operator's arm."</span>
+                  -
+                    image: iStock_000012331544_Medium_g.jpg
+                    hit: tech-ws-hit
+                    name: Technician Workstation
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: A laptop used by technical Defenders to troubleshoot and monitor cyber assets inside the facility. It has specialized software installed that can monitor the network and troubleshoot server issues. <span>Be on your guard. There are older and fouler things in the depths of the network.</span>
+                  -
+                    image: iStock_000016348944_Medium_d.jpg
+                    hit: file-server-hit
+                    name: File Server
+                    type: BCSI Location
+                    network: BCSI Location
+                    description: Contains maps, network diagrams and other reference and maintenance information useful to have in the facility. It's not on the controls network, but we must be careful to protect the BCSI on the server. <span>Keep it secret, keep it safe.</span>
+                  -
+                    image: iStock_000068955545_Medium_i.jpg
+                    hit: map-computer-hit
+                    name: Mapboard Computer
+                    type: Protected Cyber Asset (PCA)
+                    network: ESP
+                    description: Displays data on the mapboard that is collected from the control system. It's on the control system network, but can't issue commands, so it's a Protected Cyber Asset. <span>Big things come in small packages.</span>
+                  -
+                    image: iStock_000057458210_Medium_f.jpg
+                    hit: printer-hit
+                    name: Network Printer
+                    type: Protected Cyber Asset (PCA)
+                    network: ESP
+                    description: This printer is attached to the controls network so the technical Defender can print out schematics and diagrams. Since it's on the same network as the BES Cyber Assets, we need to protect it. <span>Nothing beats curling up with a warm newly printed document and a glass of milk.</span>
+      # 1 UnTagged BCA PCA Assets  ==========================================
+      -
+        action:
+          - {cmd: unhighlight.all }
+          - {cmd: label.hide, data: {id: all}  }
+        duration: {kind: time, seconds: 1}
+      # 1 Dialogue Protected Cyber Assets  ==========================================
+      -
+        title: CIP-Related Cyber Assets
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: CIP-Related Cyber Assets
+                body: <a data-label="bca">BCA</a> and <a data-label="pca">PCA</a> are the core assets we protect, but in future episodes, we'll add door control systems, firewalls, and other defenses to our facility. CIP gives these devices their own delightful acronyms like "PACS" and "EACMS", so to make your life easier we'll refer to all these assets with one term going forward&#58; <a data-label="crca" class="new">CIP-Related Cyber Assets (CRCAs)</a>.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue BES Cyber System  ==========================================
+      -
+        title: BES Cyber System Information
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: BES Cyber System Information
+                body: In addition to assets, facilities also contain <a data-label="bcsi" class="new">BES Cyber System Information (BCSI)</a> that we must protect. This includes maps, security plans, network diagrams, configuration information, and other information useful for a bot planning an attack. <a data-label="bcsi">BCSI</a> is found in many places - the hard drives of our <a data-label="crca">CRCAs</a>, on file shares, whiteboards, and in filing cabinets. <br/><br/>Let's inspect some of the <a data-label="bcsi">BCSI</a> locations the Compliance Team identified at your facility.
+                btn:
+                  style: lightning
+                  text: tag BCSI
+                  action: {cmd: slides.next-slide}
+                labels:
+                  a: {title: "PCA"}
+      # 1 Highlight BCSI Equipment  ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 7, content: asset_bcsi_label.json }
+        action:
+          - {cmd: label.hide, data: {id: all} }
+          - {cmd: highlight, data: {id: filing-cabinet, level: bcsi} }
+          - {cmd: highlight, data: {id: map, level: bcsi} }
+          - {cmd: highlight, data: {id: monitor, level: bcsi} }
+          - {cmd: continue.show, data: {css: bar-topper}}
+
+        duration: {kind: ux}
+        # 1 Equipment exploration component:
+        ux:
+          components:
+            -
+              kind: explore-cards
+              config:
+                meta:
+                  title: Asset Exploration
+                required-views: 0 # (number of cards they have to view to move on to next slide)
+                template: equipment
+                cards:
+                  -
+                    image: iStock_000020512725_Medium_h.jpg
+                    hit: filing-cabinet-hit
+                    name: Filing Cabinets
+                    type: BCSI Location
+                    network: N/A
+                    description: Holds network diagrams, substation diagrams, and other documents classified as BCSI that we need to protect. <span>Paper? Really? Are we not living in the 21st century?</span>
+                  -
+                    image: iStock_000041358150_Medium_k.jpg
+                    hit: map-hit
+                    name: System Mapboard
+                    type: BCSI Location
+                    network: N/A
+                    description: Gives the operator a visual map of the system they are controlling. A system operator might see the power grid they are managing, while a power plant operator may see a visual picture of the components of the facility. The mapboard is sometimes a physical map with lights and numeric displays. For our facility, it's a giant digital display. <span>Sometimes I find myself just staring at it…</span>
+                  -
+                    image: iStock_000008213570_Medium_l.jpg
+                    hit: monitor-hit
+                    name: Operator Monitors
+                    type: BCSI Location
+                    network: N/A
+                    description: Operators like lots of monitors to see all their systems. These monitors often have BCSI on-screen, so we must be sure to protect the information from being photographed or copied. <span>NEED MORE MONITORS!</span>
+      # 1 Dialogue Duty Call ==========================================
+      -
+        title: Duty Call!
+        action:
+          - {cmd: "unhighlight.all"}
+        movie:
+          layers:
+            - {depth: 6, content: clear }
+            - {depth: 7, content: clear }
+            - {depth: 8, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                replaceVars: [body]
+                title: Duty Call!
+                body: Nice job Cadet! You've completed your first chapter and now know what CIP requires us to protect. I've programmed your specific duties at ${companyName} into the WarCore to review.
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
+      # 1 Duties with CTANLEE Guidance ==========================================
+      -
+        action: {cmd animations.go.low}
+        dialogue:
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          defaults:
+            next: audio
+          actions:
+            a:
+              pos: [150, 200]
+              emo: happy
+              text: "Your duties are listed here. Click on a duty to review it."
+              audio: Story_2_Ctanlee_31.mp3
+            b:
+              pos: [640, 400]
+              emo: down
+              text: "Click I acknowledge at the bottom of the duty when you are done."
+              audio: Story_2_Ctanlee_32.mp3
+            c:
+              pos: [640, 600]
+              emo: down
+              text: "When all duties are acknowledged, you can click CONTINUE to proceed."
+              audio: Story_2_Ctanlee_33.mp3
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP1CH1}
+        duration: {kind: ux}
+
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 2
+  # ----------------------------------------------
+  -
+    title: Chapter 2
+    subtitle: Defenders and Duties
+    kind: chapter
+    slides:
+      # 2 Dialogue Defenders ==========================================
+      -
+        title: Defenders
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Defenders
+                body: We now know what we're defending and why. Let's talk about who is doing the defending. <a data-label="cip">CIP</a> requires that a single <a data-label="manager" class="new">CIP Senior Manager</a> be made responsible for all <a data-label="cip">CIP</a> defenses. This is a big job, so this manager will delegate responsibilities to <a data-label="defenders" class="new">Defenders</a> in the facilities to perform. <br/><br/>Let's add some of these Defenders to our facility.
+                btn:
+                  style: lightning
+                  text: load defenders
+                  action: {cmd: slides.next-slide}
+      # 2 Animate Defenders Build ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 6, content: factory_workers_build.json }
+        duration: {kind: time, seconds: 5}
+      # 2 Animate Defenders Loop ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 6, content: ~1/factory_workers_loop.json, loop: true }
+        duration: {kind: time, seconds: .2}
+      # 2 Dialogue More Defenders ==========================================
+      -
+        title: More Defenders
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: More Defenders
+                body: The <a data-label="manager">CIP Senior Manager</a> often has specialized <a data-label="defenders">Defenders</a> who help in different ways. Let's add the Compliance Team, Human Resources, and the <a data-label="manager">CIP Senior Manager</a> herself to our HQ building.
+                btn:
+                  style: lightning
+                  text: load defenders
+                  action: {cmd: slides.next-slide}
+      # 2 Animate HQ Defenders ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 7, content: hq_facility_build.json }
+        dialogue:
+          timeline:
+            - {action: a }
+            - {action: b }
+          defaults:
+            next: audio
+          actions:
+            a:
+              pos: []
+              next: 1500
+            b:
+              pos: [150, 200]
+              emo: happy
+              text: Looking for an HQ Building?
+              audio: Story_2_Ctanlee_X37_alt.mp3
+        duration: {kind: time, seconds: 5}
+      # 2 Dialogue Duties ==========================================
+      -
+        title: Duties
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Duties
+                body: 'A <a data-label="defenders">Defender</a> has two primary jobs related to <a data-label="cip">CIP</a>:<ol><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed</li></ol>Our <a data-label="cyber_security_program" class="new">Cyber Security Program</a> describes how our duties meet the <a data-label="cip">CIP Standards</a> and we teach these duties through annual cyber security training and regular awareness communication.'
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 2 Dialogue Get to Know Defenders ==========================================
+      -
+        title: Get to Know Your Defenders
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Get to Know Your Defenders
+                body: While leadership may define the <a data-label="cyber_security_program">Program</a> and provide training and tools, success depends on everyone doing their duties. Protecting our infrastructure is a team effort and that's why we don't give out the title <a data-label="defenders">"Defender"</a> lightly. <br/><br/>On the next screen you can click on Defenders to learn about them and some of their duties.
+                btn:
+                  style: lightning
+                  text: inspect defenders
+                  action: {cmd: slides.next-slide}
+      # 2 Explore Defenders ==========================================
+      -
+        action: {cmd: continue.show, data: {css: bar-topper}}
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: explore-cards
+              config:
+                meta:
+                  title: Defender Exploration
+                required-views: 0
+                template: defender
+                cards:
+                  -
+                    hit: arnold
+                    label: {text: Arnold, face: top}
+                    name: Arnold, Mr. Electrical Worker
+                    quote: This country was built by people wearing denim.
+                    personal1: Proud of
+                    personal2: Family, America, personal safety record, fixing things with his bare hands, and the big one that got away. REALLY! - it was THAT big!!
+                    duties:
+                      - <span>Using ID Card to Access Facilities</span> Door System Logs
+                      - <span>Following Change Control Procedures Before Working on a BES Cyber Asset</span> Change Control Checklist
+                  -
+                    hit: shelly
+                    label: {text: Shelly, face: right }
+                    name: Shelly, CIP Senior Manager
+                    quote: Keeping head and Standards high.
+                    personal1: Remembers fondly
+                    personal2: That one time during the CIPv5 transition that she participated in a conference call on her phone, a separate WebEx on her laptop, all while leading a team meeting in person.
+                    duties:
+                      - <span>Approve Cyber Security Program</span> Signed Cyber Security Program
+                      - <span>Delegate Duties and Responsibilities</span> Signed delegations documentation
+                  -
+                    hit: jerry
+                    label: {text: Jerry, face: right }
+                    name: Jerry, that guy from HR
+                    quote: Always ready to give out hugs…while respecting your personal space
+                    personal1: Holds record for
+                    personal2: Reviewing 247 resumes in one day
+                    duties:
+                      - <span>Check backgrounds and criminal history of new employees</span> Dated personnel risk assessment records
+                      - <span>Notify when employees are terminated so their access can be disabled</span> Dated workflow with approvals
+                  -
+                    hit: brad
+                    label: {text: Brad, face: right }
+                    name: Brad, Compliance Team Warrior
+                    quote: Compliance is just another way to say 'I love you'
+                    personal1: Favorite possession
+                    personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
+                    duties:
+                      - <span>Ensuring Compliance Requirements are documented in the Cyber Security Program</span> Signed and dated Cyber Security Program with accompanying processes
+                      - <span>Regular Review and Approvals of Facilities and Assets</span> Signed and dated lists of assets
+                  -
+                    hit: rod
+                    label: {text: Rod, face: top, arrow: right}
+                    name: Rod, the Smooth Operator
+                    quote: 99% routine, 1% sheer terror.
+                    personal1: Daily caffeine quota is
+                    personal2: 5 cups of coffee, 3 energy drinks
+                    duties:
+                      - <span>Using ID Card to Access Facilities</span> Door System Logs
+                      - <span>Not Plugging Your Cell Phone Into Your Control System Workstation</span> Computer System Events
+                  -
+                    hit: richard
+                    label: {text: Richard, face: top, arrow: right}
+                    name: Richard, Your IT Dude
+                    quote: I'm not anti-social. I'm just not user friendly
+                    personal1: Lifetime accomplishment
+                    personal2: Playing World of Warcraft 47.38 hours in a row.
+                    duties:
+                      - <span>Patching Servers</span> Production Change Forms
+                      - <span>Updating Antivirus on BCAs</span> Task Documentation
+                  -
+                    hit: lisa
+                    label: {text: Lisa, face: top, arrow: right}
+                    name: Lisa, Supervisor Who Wears Prada
+                    quote: Working weekends allows for a jumpstart of the work week
+                    personal1: Happiest when
+                    personal2: A good plan comes together.
+                    duties:
+                      - <span>Approving facility-related Cyber Assets on the Cyber Asset Lists</span> Dated workflow with approvals
+                      - <span>Using ID Card to Access Facilities</span> Door System Logs
+      # 2 Duties ==========================================
+      -
+        action:
+          - {cmd: label.hide, data: {id: all}  }
+        movie:
+          layers:
+            - {depth: 6, content: clear }
+            - {depth: 7, content: clear }
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP1CH2}
+        duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 3
+  # ----------------------------------------------
+  -
+    title: Chapter 3
+    subtitle: Our Regulators
+    kind: chapter
+    slides:
+      # 3 Dialogue Regulators ==========================================
+      -
+        title: Regulators
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                replaceVars: [body]
+                title: Regulators
+                body: <a data-label="nerc" class="new">NERC</a> maintains the <a data-label="cip">CIP Standards</a>, and ${companyName} is accountable to our local regulator, ${companyRegulator}, who performs regular audits to confirm we are following the <a data-label="cip">Standards</a>. <br/><br/>The evidence we create is critical to our relationship with regulators because it shows that we are holding fast against the robots by performing our duties. With all these duties to perform and evidence to record, let's see what happens if we don't follow a CIP Standard.
+                btn:
+                  style: lightning
+                  text: run simulator
+                  action: {cmd: slides.next-slide}
+      # 3 Animation Violation ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 500, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~1/CIN_DoorOpen.mp3, delay: 1500, volume: 0.08 }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 2000, volume: 0.08 }
+          - {content: ~1/SFX_Camera.mp3, delay: 6000, volume: 1 }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 7000, volume: 0.08, loop: 1 }
+          - {content: ~1/CIN_DoorOpen.mp3, delay: 9500, volume: 0.08 }
+          - {content: ~1/CIN_DoorOpen.mp3, delay: 12000, volume: 0.08 }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 12800, volume: 0.08 }
+          - {content: ~1/CIN_DoorOpen.mp3, delay: 13000, volume: 0.08 }
+        movie:
+          layers:
+            - {depth: 6, content: violation.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+          actions:
+            a:
+              pos: [200,220]
+              next: 1000
+            b:
+              pos: [200,220]
+              emo: down
+              text: Oh, we have a visitor. Where are you going?
+              audio: Story_2_Ctanlee_12.mp3
+            c:
+              next: 3000
+              pos: [400,220]
+              text: "Visiting the control room, are we?"
+              audio: Story_2_Ctanlee_X38.mp3
+            d:
+              next: 4000
+              pos: [200,150]
+              text: "Hey! That's BES Cyber System Information."
+              audio: Story_2_Ctanlee_X39.mp3
+            e:
+              pos: [500,100]
+              text: "Stop. Stop. Don't leave with that! Simulation Pause!"
+              audio: Story_2_Ctanlee_15.mp3
+        duration: {kind: ux }
+      # 3 Dialogue Violation ==========================================
+      -
+        title: Violations
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Violations
+                body: Someone just left the facility with <a data-label="bcsi">BCSI</a> - a picture of the operator's computer screens! If an auditor learned of this, we'd likely be issued a Violation. Violations can come with big fines, up to &#36;1,000,000 per day, per incident. Youch! <br/><br/>So when we violate a <a data-label="cip">CIP</a> requirement, it's always better to issue a <a data-label="self-report" class="new">Self-Report</a> to our regulator and fix our internal processes so the issue won't happen again. We still may receive a violation, but regulators look more favorably when we catch and fix our own problems. <br/><br/>Since this incident, all Defenders have received BCSI security training. Let's see if this helps avoid a violation.
+                btn:
+                  style: lightning
+                  text: run simulator
+                  action: {cmd: slides.next-slide}
+      # 3 Ctanlee Clear ==========================================
+      -
+        action: {cmd: ctanlee.gohome}
+        duration: {kind: time, seconds: 1 }
+      # 3 Animation Good Catch ==========================================
+      -
+        sfx:
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 500, volume: 0.08, loop: 1 }
+          - {content: ~1/SFX_Camera.mp3, delay: 7000, volume: 1 }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 9100, volume: 0.08 }
+          - {content: ~1/SFX_Tackle.mp3, delay: 10500, volume: 1 }
+        movie:
+          layers:
+            - {depth: 6, content: clear }
+            - {depth: 6, content: goodcatch.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              pos: [200, 200]
+              next: 7400
+            b:
+              pos: [400,220]
+              text: "I think Rod saw what she did. Stop her!"
+              audio: Story_2_Ctanlee_19.mp3
+              next: 3500
+            c:
+              pos: [300,100]
+              text: "Simulation Pause! Oh My!"
+              audio: Story_2_Ctanlee_20.mp3
+            d:
+              pos: [300,100]
+              emo: happy
+              text: "We're 100% compliant, though my algorithms predict a 98% chance of lawsuit for the dogpile method."
+              audio: Story_2_Ctanlee_21.mp3
+        duration: {kind: ux }
+      # 3 Ctanlee Clear ==========================================
+      -
+        action: {cmd: ctanlee.gohome}
+        duration: {kind: time, seconds: 1 }
+      # 3 Dialogue One Down ==========================================
+      -
+        title: One Episode Down
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: One Episode Down
+                body: Nice job, Cadet. Our facility is built, we tagged <a data-label="crca">CRCAs</a> and <a data-label="bcsi">BCSI</a> locations, learned about the <a data-label="manager">CIP Senior Manager</a> and the <a data-label="cyber_security_program">Cyber Security Program</a>, and added <a data-label="defenders">Defenders</a>. Most importantly, we learned that our core mission as <a data-label="defenders">Defenders</a> is to protect our infrastructure by performing our duties and creating evidence. <br/><br/>Let's test your knowledge and move onto the next episode where we'll build and secure the perimeters around our facility. Buckle up into your office chairs, because things are about to get really interesting. The robots are coming…
+                btn:
+                  style: lightning
+                  text: Review Duties
+                  action: {cmd: slides.next-slide}
+      # 3 Duties ==========================================
+      -
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP1CH3}
+        duration: {kind: ux}
+      # 3 Quiz ==========================================
+      -
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: quiz
+              config:
+                source: EP1-CIP
+      # 3 Rank Advance ==========================================
+      -
+        sfx:
+          - {content: ~g/SFX_Level_CadetFirstClass.mp3, volume:1}
+        movie:
+          layers:
+            - {depth: 7, background: black, content: ~g/cadet_first_class.json, events: [complete] }
+        duration: {kind: listen, event: layer.7.complete }

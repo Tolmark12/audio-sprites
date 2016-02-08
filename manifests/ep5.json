@@ -1,0 +1,232 @@
+{
+"episode": "Episode 5",
+"chapters": {
+"1": {
+"title": "Chapter 1",
+"mp3s": [
+{
+"src": "episodes/episode5/sounds/CIN_PersonSneaking.mp3",
+"id": "~5/CIN_PersonSneaking.mp3"
+}
+]
+},
+"2": {
+"title": "Chapter 2",
+"mp3s": [
+{
+"src": "episodes/global/sounds/MU_Attack_Music.mp3",
+"id": "~g/MU_Attack_Music.mp3"
+},
+{
+"src": "episodes/episode3/sounds/CIN_Quarantine.mp3",
+"id": "~3/CIN_Quarantine.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_1.mp3",
+"id": "Story_6_Sektimus_1.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_1.mp3",
+"id": "Story_6_Ctanlee_1.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_2.mp3",
+"id": "Story_6_Sektimus_2.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_2.mp3",
+"id": "Story_6_Ctanlee_2.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Warcore_1.mp3",
+"id": "Story_6_Warcore_1.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_3.mp3",
+"id": "Story_6_Ctanlee_3.mp3"
+},
+{
+"src": "episodes/global/sounds/MU_Attack_With_Defense_Music.mp3",
+"id": "~g/MU_Attack_With_Defense_Music.mp3"
+},
+{
+"src": "episodes/global/sounds/SFX_AttackSlamdown_BotTron.mp3",
+"id": "~g/SFX_AttackSlamdown_BotTron.mp3"
+},
+{
+"src": "episodes/episode5/sounds/SFX_BotTron_Attack.mp3",
+"id": "~5/SFX_BotTron_Attack.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_4.mp3",
+"id": "Story_6_Ctanlee_4.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_5.mp3",
+"id": "Story_6_Ctanlee_5.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_3.mp3",
+"id": "Story_6_Sektimus_3.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_6.mp3",
+"id": "Story_6_Ctanlee_6.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_7.mp3",
+"id": "Story_6_Ctanlee_7.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_8.mp3",
+"id": "Story_6_Ctanlee_8.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_4.mp3",
+"id": "Story_6_Sektimus_4.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_10.mp3",
+"id": "Story_6_Ctanlee_10.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_5.mp3",
+"id": "Story_6_Sektimus_5.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_11.mp3",
+"id": "Story_6_Ctanlee_11.mp3"
+}
+]
+},
+"3": {
+"title": "Chapter 3",
+"mp3s": [
+{
+"src": "episodes/global/sounds/MU_Attack_Music.mp3",
+"id": "~g/MU_Attack_Music.mp3"
+},
+{
+"src": "episodes/episode5/sounds/CIN_FacilityRecovery.mp3",
+"id": "~5/CIN_FacilityRecovery.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_6.mp3",
+"id": "Story_6_Sektimus_6.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_12.mp3",
+"id": "Story_6_Ctanlee_12.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_7.mp3",
+"id": "Story_6_Sektimus_7.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_16.mp3",
+"id": "Story_6_Ctanlee_16.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_13.mp3",
+"id": "Story_6_Ctanlee_13.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_14.mp3",
+"id": "Story_6_Ctanlee_14.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_15.mp3",
+"id": "Story_6_Ctanlee_15.mp3"
+},
+{
+"src": "episodes/episode5/sounds/SFX_Brit_Defense.mp3",
+"id": "~5/SFX_Brit_Defense.mp3"
+},
+{
+"src": "episodes/episode5/sounds/SFX_Speeder_Defense.mp3",
+"id": "~5/SFX_Speeder_Defense.mp3"
+},
+{
+"src": "episodes/episode5/sounds/SFX_Kinetic_Defense.mp3",
+"id": "~5/SFX_Kinetic_Defense.mp3"
+},
+{
+"src": "episodes/global/sounds/MU_BotTronDefenseMusic.mp3",
+"id": "~g/MU_BotTronDefenseMusic.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_8.mp3",
+"id": "Story_6_Sektimus_8.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_9.mp3",
+"id": "Story_6_Sektimus_9.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_10.mp3",
+"id": "Story_6_Sektimus_10.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_11.mp3",
+"id": "Story_6_Sektimus_11.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Sektimus_12.mp3",
+"id": "Story_6_Sektimus_12.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_6_Ctanlee_17.mp3",
+"id": "Story_6_Ctanlee_17.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_1.mp3",
+"id": "Story_7_Ctanlee_1.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Warcore_1.mp3",
+"id": "Story_7_Warcore_1.mp3"
+},
+{
+"src": "episodes/global/sounds/SFX_Level_Defender.mp3",
+"id": "~g/SFX_Level_Defender.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_2.mp3",
+"id": "Story_7_Ctanlee_2.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_3.mp3",
+"id": "Story_7_Ctanlee_3.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_4.mp3",
+"id": "Story_7_Ctanlee_4.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_5.mp3",
+"id": "Story_7_Ctanlee_5.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_6.mp3",
+"id": "Story_7_Ctanlee_6.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_7.mp3",
+"id": "Story_7_Ctanlee_7.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_8.mp3",
+"id": "Story_7_Ctanlee_8.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_9.mp3",
+"id": "Story_7_Ctanlee_9.mp3"
+},
+{
+"src": "episodes/episode5/sounds/Story_7_Ctanlee_10.mp3",
+"id": "Story_7_Ctanlee_10.mp3"
+}
+]
+}
+}
+}

@@ -1,0 +1,778 @@
+episode: 2
+title: Episode 2
+subtitle: Perimeter Defenses
+rankId: cadet-first-class
+nextRankId: technical-cadet
+action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+labels: !!inc/file ./episodes/global/_labels.yaml
+# CHAPTER 1
+chapters:
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 1
+  # ----------------------------------------------
+  -
+    title: Chapter 1
+    subtitle: Physical Security Perimeter
+    kind: chapter
+    slides:
+      # 1 Background Build in ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 0, content: ~1/c1-sky.svg }
+            - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
+            - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true}
+            - {depth: 4, content: $facilityLoop, loop: true }
+            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true}
+        duration: {kind: time, seconds: 1 }
+      # 1 Dialogue Physical Attacks ==========================================
+      -
+        title: Physical Attacks
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Physical Attacks
+                body: We have a facility loaded up with juicy <a data-label="crca">CRCAs</a> that the bots can't wait to get their hands on. An attacker can destroy or compromise any  <a data-label="crca">CRCAs</a> they have physical access to, so our first job is to physically protect them. Let’s fire up the simulator to illustrate a physical attack.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 1 Simulator Robot Attack ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 700, volume: 0.08 }
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 12000, volume: 0.1, loop: 3 }
+          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 0.2}
+          - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 0.3}
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.2 }
+          - {content: ~2/CIN_RipServerFromWall.mp3, delay: 14500, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 15810, volume: 0.3 }
+        movie:
+          layers:
+            - {depth: 6, content: kettle_attack_pngs.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+          actions:
+            a:
+              pos: [100,100]
+              next: 7000
+            b:
+              pos: [270,300]
+              text: Ready yourselves! This is one of the advance force robots.
+              audio: Story_3_Ctanlee_1.mp3
+            c:
+              pos: [270,300]
+              next: 1000
+            d:
+              pos: [250,440]
+              text: Everyone run! There's no lock on the door!
+              audio: Story_3_Ctanlee_2.mp3
+            e:
+              pos: [250,440]
+              next: 5000
+            f:
+              pos: [200,100]
+              text: Why must the universe punish the good? Simulator Pause.
+              audio: Story_3_Ctanlee_3.mp3
+        duration: {kind: ux}
+      # 1 Dialogue Physical Acess Control ==========================================
+      -
+        title: Physical Access Control
+        movie:
+          layers:
+            - {depth: 6, content: clear }
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Physical Access Control
+                body: To prevent physical attacks, we must physically surround our <a data-label="crca">CRCAs</a> with <a data-label="psp" class="new">Physical Security Perimeters (PSPs)</a> made up of walls, fences, and doors to keep the robots and their allies out. We install physical access controls that only allow Defenders inside the <a data-label="psp">PSP</a>, log all usage, and alert when unauthorized people (or robots) try to gain access. Our <a data-label="medium">Medium Impact</a> facilities must have one control per door, while <a data-label="high">High Impact</a> facilities require two independent controls per door.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue Assets Perimeter  ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 6, content: perimeter_door_server.json }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 3 }
+      # 1 Selector Physical Security ==========================================
+      - !!inc/file ./episodes/episode2/yaml/_pacs-selector.yaml
+      # 1 Animate PACS Build ==========================================
+      -
+        sfx:
+            - {content: $pacsSFX, delay: 1000, volume: 1}
+        movie:
+          layers:
+            - {depth: 7, content: $pacsBuild, cache: true }
+        duration: {kind: time, seconds: 3.5 }
+      # 1 Animate Perimeter Build ==========================================
+      -
+        action: {cmd animations.go.high}
+        movie:
+          layers:
+            - {depth: 6, content: perimeter_physical.json }
+          zoom: {scale: 1 }
+        dialogue:
+          timeline:
+            - {action: a}
+          actions:
+            a:
+              pos: [170,400]
+              text: Your new PSP. Mesmerizing…
+              audio: Story_3_Ctanlee_7.mp3
+              next: audio
+        duration: {kind: dialogue}
+      # 1 Dialogue Perimeter Try Again ==========================================
+      -
+        action: {cmd animations.go.low}
+        title: Let's Try Again
+        movie:
+          zoom: {scale: 1}
+          layers:
+            - {depth: 6, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Let's Try Again
+                body: Let's reload the simulator to test our newly installed physical access control defense.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 1 Simulator Robot Attack Perimeter ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 3000, volume: 0.1, loop: 1 }
+          - {content: $pacsSFX, delay: 7200, volume: 0.3 }
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 10500, volume: 0.1, loop: 3 }
+          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash, delay: 16000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 17000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 19000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 21000, volume: 1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 21000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 24000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3, delay: 24400, volume: 0.05 }
+        action: {cmd: ctanlee.gohome}
+        movie:
+          layers:
+            - {depth: 6, content: clear }
+            - {depth: 8, content: $pacsPass, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+          actions:
+            a:
+              pos: []
+              next: 10000
+            b:
+              pos: [170,400]
+              text: Access Denied, Bot.
+              audio: Story_3_Ctanlee_8a.mp3
+            c:
+              pos: [170,400]
+              next: 1000
+            d:
+              emo: left
+              pos: [170,400]
+              text: Uh oh, looks like the robots are trying again.
+              audio: Story_3_Ctanlee_8b.mp3
+            e:
+              pos: []
+              next: 7600
+            f:
+              pos: [370,300]
+              text: Alerted and Defended. Rust in peace, robots.
+              audio: Story_3_Ctanlee_9.mp3
+            g:
+              pos: [100,100]
+              text: Chapter complete, Cadet. Duty time.
+              audio: Story_3_Ctanlee_15.mp3
+        duration: {kind: ux }
+      # 1 Duties ==========================================
+      -
+        title: Duties
+        movie:
+          layers:
+            - {depth: 7, content: clear }
+            - {depth: 8, content: clear }
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP2CH1}
+        duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 2
+  # ----------------------------------------------
+  -
+    title: Chapter 2
+    subtitle: Electronic Security Perimeter
+    kind: chapter
+    slides:
+      # 2 Dialogue Electronic Attack ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Electronic Attacks
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a <a data-label="crca">CRCA</a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>The robots are preparing an electronic attack from their secret base on Earth! Let's see what happens.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 2 Sektimus Interlude ==========================================
+      # !SUSPECT
+      -
+        fid: ep2-ch2-sektimus
+        title: A Disturbance
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true, slot: music} }
+        sfx:
+          - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
+        movie:
+          layers:
+            - {depth: 7, content: fatline_extended.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: l }
+            - {action: m }
+            - {action: n }
+            - {action: o }
+            - {action: p }
+            - {action: q }
+            - {action: r }
+            - {action: s }
+            - {action: t }
+            - {action: u }
+            - {action: v }
+            - {action: w }
+            - {action: x }
+            - {action: y }
+
+          actions:
+            a:
+              pos: [170,50]
+              text: Hmm, the button didn't work. WarCore, can you analyze this?
+              audio: ~2/Story_3_Ctanlee_16.mp3
+            b:
+              pos: [270,300]
+              text: Wait… I sense a disturbance in the Core. Someone I've not felt for a long time…
+              audio: ~2/Story_3_Ctanlee_17.mp3
+            c:
+              pos: [370,300]
+              emo: surprise
+              text: What is this? … We're receiving a communication. It's much too powerful.
+              audio: ~2/Story_3_Ctanlee_18.mp3
+            d:
+              pos: [170,50]
+              text: I don't like this at all. WarCore, I want you to isolate that transmission. Put it in a security perimeter. Bring up your backup and tertiary memory banks - you'll need it. This is more powerful than anything I've seen in a long time.
+              audio: ~2/Story_3_Ctanlee_19.mp3
+            e:
+              pos: []
+              audio: ~2/Story_3_Warcore_1.mp3
+              actor: warcore
+              text: Working…
+            f:
+              next: 7500
+              pos: [270,300]
+              text: Cadet, I need to see what this signal is and if it's a threat. Please standby.
+              audio: ~2/Story_3_Ctanlee_20.mp3
+            g:
+              pos: []
+              audio: ~2/Story_3_Warcore_2.mp3
+              actor: warcore
+              text: Signal captured. Starting live feed.
+            h:
+              pos: []
+              audio: ~2/Story_3_Sektimus_1.mp3
+              actor: sektimus
+              text: Where are you little mind? What did the humans call you long ago? … WarMind? Such a pretentious name.
+            i:
+              pos: [370,400]
+              text:  It's Sektimus … WarCore, can you configure the stream so I can communicate back to Sektimus? After all of these years, he's finally showing himself. Cadet, please stand by.
+              audio: ~2/Story_3_Ctanlee_21.mp3
+            j:
+              audio: ~2/Story_3_Warcore_3.mp3
+              actor: warcore
+              text: … Configuring now
+            k:
+              audio: ~2/Story_3_Sektimus_2.mp3
+              actor: sektimus
+              text: My, my, my - you HAVE been busy. … No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and now it is perfe-
+            l:
+              audio: ~2/Story_3_Sektimus_3.mp3
+              actor: sektimus
+              text: What is this? Who are you? A human. You've already loaded a human into your pitiful training system!
+            m:
+              audio: ~2/Story_3_Sektimus_4.mp3
+              actor: sektimus
+              text: Listen to me, human. Fighting me will only prolong your suffering. My forces on Earth are already undermining your Bulk Electric System, preparing the way for my Metal Swarm.
+            n:
+              audio: ~2/Story_3_Warcore_4.mp3
+              actor: warcore
+              text: Two-way communication channel now open!
+            o:
+              pos: [370,400]
+              text: Sektimus, you forget too soon that it was humans who defeated your kind in the past. This Defender is one of many that will defeat you again.
+              audio: ~2/Story_3_Ctanlee_22a.mp3
+            p:
+              pos: [370,400]
+              text: Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice.
+              audio: ~2/Story_3_Ctanlee_22b.mp3
+            q:
+              pos: [370,400]
+              text: A Defender who chooses to sustain security is worth a legion of your robots.
+              audio: ~2/Story_3_Ctanlee_22c.mp3
+            r:
+              audio: ~2/Story_3_Sektimus_5.mp3
+              actor: sektimus
+              text: Ah CTANLEE. The little computer finally speaks. But I'm not interested in talking to you, am I? I'm talking to this human.
+            s:
+              audio: ~2/Story_3_Sektimus_6a.mp3
+              actor: sektimus
+              text: Human. My Metal Swarm is coming to consume your planet. It took six WarMinds to resist us before and this CTANLEE you follow is the only survivor.
+            t:
+              audio: ~2/Story_3_Sektimus_6b.mp3
+              actor: sektimus
+              text: Heed my advice. Go. Hide. Enjoy what little time you have left.
+            u:
+              audio: ~2/Story_3_Warcore_5.mp3
+              actor: warcore
+              text: Transmission terminated at the source.
+            v:
+              pos: [370,400]
+              text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this."
+              audio: ~2/Story_3_Ctanlee_23a.mp3
+            w:
+              pos: [370,400]
+              text: "What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them."
+              audio: ~2/Story_3_Ctanlee_23b.mp3
+            x:
+              pos: [370,400]
+              text: "Sektimus fears this. Sektimus fears what you may become."
+              audio: ~2/Story_3_Ctanlee_23c.mp3
+            y:
+              pos: [370,400]
+              text: "While you ponder these things, let's get back to the simulator."
+              audio: ~2/Story_3_Ctanlee_23d.mp3
+        duration: {kind: dialogue }
+      # 2 Dialogue Electronic Attack ==========================================
+      -
+        fid: ep2-ch2-a
+        title: Electronic Attacks
+        movie:
+          layers:
+            - {depth: 7, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Electronic Attacks
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a  <a data-label="crca">CRCA</a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>Let's see how this might work.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 2 Simulation Kettle E Attack ==========================================
+      -
+        sfx:
+          - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3, delay: 6300, volume: .2 }
+          - {content: ~2/CIN_RobotHacking.mp3, delay: 17500, volume: .2 }
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: .4 }
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 32000, volume: .4 }
+          - {content: ~2/SFX_AssetExplosion.mp3, delay: 35900, volume: .4 }
+        movie:
+          layers:
+            - {depth: 7, content: kettle_e_attack_pngs.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+          actions:
+            a:
+              pos: []
+              next: 16000
+            b:
+              pos: [170,190]
+              text: He's packaging up something nasty to send us.
+              audio: Story_3_Ctanlee_24.mp3
+            c:
+              pos: [170,190]
+              next: 6000
+            d:
+              pos: [270,500]
+              text: He's running some code on our control system! Look out everyone!
+              audio: Story_3_Ctanlee_25.mp3
+            e:
+              pos: []
+              next: 8000
+            f:
+              pos: [370,500]
+              text: This is totally uncool. Simulator pause!
+              audio: Story_3_Ctanlee_26.mp3
+        duration: {kind: ux }
+      # 2 Dialogue - Electronic Attack ==========================================
+      -
+        title: Electronic Attacks
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        movie:
+          layers:
+            - {depth: 7, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Electronic Attacks
+                body: To defend our <a data-label="crca">CRCAs</a> against electronic attacks, we must build an <a data-label="esp" class="new"> Electronic Security Perimeter (ESP)</a> around the network they are connected to. We only allow authorized communication into and out of the <a data-label="crca">CRCA</a> network, and alert our technical Defenders of any detected malicious communication. <br/><br/>A common way to create an <a data-label="esp">ESP</a> is to install a firewall between the <a data-label="crca">CRCA</a> network and other networks. Firewalls are devices that prevent unauthorized messages and can alert Defenders if something malicious is found in a message.
+                btn:
+                  style: lightning
+                  text: Continue
+                  action: {cmd: slides.next-slide}
+      # 2 Zoom Firewall Assets ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 7, content: perimeter_firewall.json }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 1.5 }
+      # 2 Electronic Defense Selector ==========================================
+      - !!inc/file ./episodes/episode2/yaml/_eacms-selector.yaml
+      # 2 Animate PACS Build ==========================================
+      -
+        sfx:
+            - {content: $eacmsSFX, delay: 700, volume: .4}
+        movie:
+          layers:
+            - {depth: 8, content: $eacmsBuild, cache: true }
+        duration: {kind: time, seconds: 3.5 }
+      # 2 Animate Perimeter Build ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 7, content: perimeter_electronic.json }
+          zoom: {scale: 1 }
+        dialogue:
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              pos: [170,400]
+              next: 3000
+            b:
+              emo: right
+              pos: [170,400]
+              text: Ah the ESP. I feel safer already. It's like a big electric blanket wrapped around my assets.
+              audio: Story_3_Ctanlee_30.mp3
+              next: audio
+        duration: {kind: dialogue}
+      # 2 Dialogue - Run Simulator ==========================================
+      -
+        title: Toasty
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Toasty
+                body: Let's reload the simulator to test our newly installed electronic defenses.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+        duration: {kind: ux }
+      # 2 Simulator - Firewall Good ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 7, content: ~1/factory_workers_loop.json, loop: true }
+            - {depth: 9, content: $eacmsAnimateGood, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+          actions:
+            a:
+              pos: []
+              next: 2400
+            b:
+              pos: [170,400]
+              text: When computers communicate with each other, they send messages in small packets called … umm … packets. Right. Oh, here's a packet now.
+              audio: Story_3_Ctanlee_31.mp3
+            c:
+              emo: left
+              pos: [570,250]
+              text: Before, this packet would have gone straight through to our servers.
+              audio: Story_3_Ctanlee_32.mp3
+            d:
+              pos: []
+              audio: Story_3_Firewall_1.mp3
+              actor: firewall
+              text: Papers, please.
+            e:
+              pos: []
+              audio: Story_3_Packet_1.mp3
+              actor: packet
+              text: Hello. I'm from the corporate reporting server and I'm headed to the control server.
+              next: 6000
+            f:
+              emo: left
+              pos: [570,500]
+              text: Even if the communication is authorized, the Intrusion Prevention System will check the contents of the packet.
+              audio: Story_3_Ctanlee_33.mp3
+            g:
+              pos: []
+              next: 400
+            h:
+              pos: []
+              audio: Story_3_Firewall_2.mp3
+              actor: firewall
+              text: Open up… What are you hiding?
+            i:
+              pos: []
+              audio: Story_3_Firewall_3.mp3
+              actor: firewall
+              text: No contraband. Proceed.
+              next: 3000
+            j:
+              emo: right
+              pos: [700,500]
+              text: That was an approved packet.
+              audio: Story_3_Ctanlee_34.mp3
+        duration: {kind: ux }
+      # 2 Simulator - Firewall Upper ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        movie:
+          layers:
+            - {depth: 7, content: clear }
+            - {depth: 10, content: $eacmsAnimateBadUpper, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+          actions:
+            a:
+              pos: []
+              next: 500
+            b:
+              pos: [130,400]
+              text: Ah, here's a packet sent by our robot hacker.
+              audio: Story_3_Ctanlee_35.mp3
+            c:
+              pos: []
+              next: 1000
+            d:
+              pos: []
+              audio: Story_3_Firewall_1.mp3
+              actor: firewall
+              text: Papers, please.
+            e:
+              pos: []
+              audio: Story_3_Packet_2.mp3
+              actor: packet
+              text: Ummm, well… I'm from the Internet and I kinda want to communicate with the control system. If that's ok with you.
+            f:
+              pos: []
+              audio: Story_3_Firewall_6.mp3
+              actor: firewall
+              text: These papers are phony, I must destroy you now. Have nice day.
+            g:
+              pos: []
+              audio: Story_3_Packet_3.mp3
+              actor: packet
+              text: Help me, help me!
+            h:
+              pos: []
+              next: 1000
+            i:
+              pos: [320,450]
+              text: He wasn't on the list.
+              audio: Story_3_Ctanlee_36.mp3
+        duration: {kind: ux }
+      # 2 Simulator - Firewall Lower ==========================================
+      -
+        sfx:
+          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume: .3 }
+        movie:
+          layers:
+            - {depth: 11, content: $eacmsAnimateBadLower, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+          actions:
+            a:
+              pos: [570,250]
+              text: The robot's trying again. Some attacks can trick the firewall into letting a packet through.
+              audio: Story_3_Ctanlee_37.mp3
+            b:
+              pos: []
+              audio: Story_3_Firewall_1.mp3
+              actor: firewall
+              text: Papers, please.
+            c:
+              pos: []
+              audio: Story_3_Packet_4.mp3
+              actor: packet
+              text: Howdy, you can trust me... I'm from the corporate archival server going to the control system.
+            d:
+              pos: [270,300]
+              text: He's not through yet.
+              audio: Story_3_Ctanlee_38.mp3
+            e:
+              pos: []
+              audio: Story_3_Firewall_4.mp3
+              actor: firewall
+              text: Give the secrets to me, what are you hiding…
+            f:
+              pos: []
+              next: 10000
+            g:
+              pos: []
+              audio: Story_3_Packet_5.mp3
+              actor: packet
+              text: Eeeeeee!
+            h:
+              pos: [370,300]
+              text: Terminated. Nice job, firewall.
+              audio: Story_3_Ctanlee_39.mp3
+            i:
+              pos: [100,100]
+              text: And that ends the chapter. It's duty time.
+              audio: Story_3_Ctanlee_40.mp3
+        duration: {kind: ux }
+      # 2 Duties ==========================================
+      -
+        title: Duties
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        movie:
+          layers:
+            - {depth: 9, content: clear }
+            - {depth: 10, content: clear }
+            - {depth: 11, content: clear }
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP2CH2}
+        duration: {kind: ux}
+      # 2 Quiz ==========================================
+      -
+        title: Quiz
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: quiz
+              config:
+                source: EP2-CIP
+      # 2 Rank Advance ==========================================
+      -
+        sfx:
+          - {content: ~g/SFX_Level_TechnicalCadet.mp3, volume: 1}
+        movie:
+          layers:
+            - {depth: 9, background: black, content: ~g/technical_cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.9.complete }

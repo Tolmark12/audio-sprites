@@ -1,0 +1,103 @@
+{
+  "urls": [
+    "./sprites/episode2/chapter1/sprite.mp3"
+  ],
+  "sprite": {
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "~2/CIN_RobotMovement.mp3": [
+      28250,
+      2037.551020408163
+    ],
+    "~g/SFX_AttackSlamdown_KettleHead.mp3": [
+      31500,
+      4571.42857142857
+    ],
+    "~2/CIN_PhysicalAttack_DoorOpen.mp3": [
+      36750,
+      1097.142857142856
+    ],
+    "~2/CIN_PhysicalAttack_Screams.mp3": [
+      39000,
+      2063.6734693877515
+    ],
+    "~2/CIN_RipServerFromWall.mp3": [
+      42250,
+      1253.877551020409
+    ],
+    "~2/CIN_PhysicalAttack_ServerCrash.mp3": [
+      44500,
+      2037.5510204081663
+    ],
+    "Story_3_Ctanlee_1.mp3": [
+      47750,
+      4101.224489795918
+    ],
+    "Story_3_Ctanlee_2.mp3": [
+      53000,
+      2795.1020408163245
+    ],
+    "Story_3_Ctanlee_3.mp3": [
+      56250,
+      4623.673469387753
+    ],
+    "Story_3_Ctanlee_4.mp3": [
+      61500,
+      1671.8367346938762
+    ],
+    "Story_3_Ctanlee_5.mp3": [
+      63750,
+      3474.2857142857133
+    ],
+    "Story_3_Ctanlee_6.mp3": [
+      68000,
+      2664.489795918371
+    ],
+    "~2/SFX_PhysicalAccessControlSystem_TheCardGuardXT.mp3": [
+      71250,
+      2690.612244897963
+    ],
+    "~2/SFX_PhysicalAccessControlSystem_HAL9000EyeScanner.mp3": [
+      74500,
+      3813.8775510204114
+    ],
+    "~2/SFX_PhysicalAccessControlSystem_WateryGraveKrakenSensor.mp3": [
+      78750,
+      2690.612244897963
+    ],
+    "Story_3_Ctanlee_7.mp3": [
+      82000,
+      13792.653061224484
+    ],
+    "~2/CIN_PhysicalDefense_Klaxon.mp3": [
+      96250,
+      2063.6734693877515
+    ],
+    "~2/CIN_PhysicalDefense_Laser.mp3": [
+      99500,
+      1253.877551020409
+    ],
+    "~2/CIN_PhysicalDefense_BlastedRobot.mp3": [
+      101750,
+      2063.6734693877515
+    ],
+    "Story_3_Ctanlee_8a.mp3": [
+      105000,
+      2089.795918367344
+    ],
+    "Story_3_Ctanlee_8b.mp3": [
+      108250,
+      3291.4285714285684
+    ],
+    "Story_3_Ctanlee_9.mp3": [
+      112500,
+      4153.469387755109
+    ],
+    "Story_3_Ctanlee_15.mp3": [
+      117750,
+      2533.87755102041
+    ]
+  }
+}

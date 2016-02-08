@@ -1,0 +1,80 @@
+title: Select your Visitor Escort System
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [50, 70]
+  actions:
+    a:
+      emo: happy
+      text: "Keep your friends close and your visitors closer."
+      audio: Story_5_Ctanlee_31.mp3
+    b:
+      emo: happy
+      text: "Only a little awkward."
+      audio: Story_5_Ctanlee_32.mp3
+    c:
+      emo: surprize
+      text: "Scotty approved."
+      audio: Story_5_Ctanlee_33.mp3
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: Visitor Escort Procedure
+          choice: visitor
+        click:
+          - {cmd: slides.next-slide}
+        intro:
+        hasLabels: true
+        title: Select your Visitor Escort System
+        subTitle: Every organization's <a data-label="visitor_escort">Visitor Escort Procedure</a> handles logging and escorting <a data-label="visitor">Visitors</a> differently. Here are a few options for your facility.
+        submitBtn: {txt: Install, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  visitor: log_book
+                  visitorBuild: ~4/log_book_build.json
+                  visitorPass: ~4/log_book_pass.json
+                  visitorSFX: ~4/SFX_VisitorEscortSystem_GuestLogBook.mp3
+            btnTxt: Guest Log Book
+            icon: mini-log-book
+            blurb: "<span>Self-expression:</span> -100% <br/><span>Risk of theft:</span> 0%"
+            details: "Just your regular, every day, ho-hum, visitor log book, focus tested for maximum generic-ness. Yeah, you have to actually log entry/exit with a pencil and make sure your visitors follow you around."
+            quote: And there's risk of papercuts, too.
+          -
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: setvars
+                data:
+                  visitor: escort_leash
+                  visitorBuild: ~4/escort_leash_build.json
+                  visitorPass: ~4/escort_leash_pass.json
+                  visitorSFX: ~4/SFX_VisitorEscortSystem_EscortLeash.mp3
+            btnTxt: PSP Buddy Escort Leash
+            icon: mini-escort-leash
+            blurb: "<span>Length:</span> 1 Meter (normal), 3 Meters (stretched) <br/><span>Alternate Use:</span> Facility Roof Bungee Jumping"
+            details: "Don't let that visitor stray. Patented harness is fully supported by the visitor’s torso - not the sensitive lower stomach area. Automatic entry/exit logging included."
+            quote: Product Slogan - While we're in the PSP, you're stuck close to me.
+          -
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: setvars
+                data:
+                  visitor: tractor_beam
+                  visitorBuild: ~4/tractor_beam_build.json
+                  visitorPass: ~4/tractor_beam_pass.json
+                  visitorSFX: ~4/SFX_VisitorEscortSystem_VisitorTractorBeam.mp3
+            btnTxt: Visitor Tractor Beam
+            icon: mini-tractor-beam
+            blurb: "To Boldly Go Where No Visitor Has Gone Before…"
+            details: "Your visitor will always stay in your orbit with this futuristic escort aid. Automatic entry/exit logging included."
+            quote: Early versions caused "accidents" with visitors wearing red shirts. The manufacturer reports the issue is fixed with a simple firmware upgrade.

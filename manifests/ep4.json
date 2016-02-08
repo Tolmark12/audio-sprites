@@ -1,0 +1,292 @@
+{
+"episode": "Episode 4",
+"chapters": {
+"1": {
+"title": "Chapter 1",
+"mp3s": [
+{
+"src": "episodes/global/sounds/MU_Attack_Music.mp3",
+"id": "~g/MU_Attack_Music.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_HumanExcited.mp3",
+"id": "~4/CIN_HumanExcited.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_HumanWalking.mp3",
+"id": "~4/CIN_HumanWalking.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_DoorOpen.mp3",
+"id": "~4/CIN_DoorOpen.mp3"
+},
+{
+"src": "episodes/global/sounds/SFX_AttackSlamdown_UnsavoryHuman.mp3",
+"id": "~g/SFX_AttackSlamdown_UnsavoryHuman.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_RobotsMovingExplosion.mp3",
+"id": "~4/CIN_RobotsMovingExplosion.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_1.mp3",
+"id": "Story_5_Ctanlee_1.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_2.mp3",
+"id": "Story_5_Ctanlee_2.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_3.mp3",
+"id": "Story_5_Ctanlee_3.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_4.mp3",
+"id": "Story_5_Ctanlee_4.mp3"
+},
+{
+"src": "episodes/episode3/sounds/Story_4_Ctanlee_3.mp3",
+"id": "~3/Story_4_Ctanlee_3.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_6.mp3",
+"id": "Story_5_Ctanlee_6.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_7.mp3",
+"id": "Story_5_Ctanlee_7.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_8.mp3",
+"id": "Story_5_Ctanlee_8.mp3"
+},
+{
+"src": "episodes/episode4/sounds/SFX_AccessControlSystem_BackgroundProbe.mp3",
+"id": "~4/SFX_AccessControlSystem_BackgroundProbe.mp3"
+},
+{
+"src": "episodes/episode4/sounds/SFX_AccessControlSystem_RiskDetector.mp3",
+"id": "~4/SFX_AccessControlSystem_RiskDetector.mp3"
+},
+{
+"src": "episodes/episode4/sounds/SFX_AccessControlSystem_VoightKampfDetector.mp3",
+"id": "~4/SFX_AccessControlSystem_VoightKampfDetector.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_Typing.mp3",
+"id": "~4/CIN_Typing.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_9.mp3",
+"id": "Story_5_Ctanlee_9.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_10.mp3",
+"id": "Story_5_Ctanlee_10.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_11.mp3",
+"id": "Story_5_Ctanlee_11.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_ScannerShock.mp3",
+"id": "~4/CIN_ScannerShock.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_12.mp3",
+"id": "Story_5_Ctanlee_12.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_13.mp3",
+"id": "Story_5_Ctanlee_13.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_14.mp3",
+"id": "Story_5_Ctanlee_14.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_15_alt.mp3",
+"id": "Story_5_Ctanlee_15_alt.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_16.mp3",
+"id": "Story_5_Ctanlee_16.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_17.mp3",
+"id": "Story_5_Ctanlee_17.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_18.mp3",
+"id": "Story_5_Ctanlee_18.mp3"
+}
+]
+},
+"2": {
+"title": "Chapter 2",
+"mp3s": [
+{
+"src": "episodes/episode4/sounds/CIN_Typing.mp3",
+"id": "~4/CIN_Typing.mp3"
+},
+{
+"src": "episodes/global/sounds/MU_Attack_Music.mp3",
+"id": "~g/MU_Attack_Music.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_AccessGranted.mp3",
+"id": "~4/CIN_AccessGranted.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_19.mp3",
+"id": "Story_5_Ctanlee_19.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_20.mp3",
+"id": "Story_5_Ctanlee_20.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_21.mp3",
+"id": "Story_5_Ctanlee_21.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_22.mp3",
+"id": "Story_5_Ctanlee_22.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_23.mp3",
+"id": "Story_5_Ctanlee_23.mp3"
+},
+{
+"src": "episodes/episode3/sounds/CIN_Quarantine.mp3",
+"id": "~3/CIN_Quarantine.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Warcore_1.mp3",
+"id": "Story_5_Warcore_1.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Sektimus_1.mp3",
+"id": "Story_5_Sektimus_1.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_24.mp3",
+"id": "Story_5_Ctanlee_24.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Sektimus_2a.mp3",
+"id": "Story_5_Sektimus_2a.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Sektimus_2b.mp3",
+"id": "Story_5_Sektimus_2b.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Sektimus_2c.mp3",
+"id": "Story_5_Sektimus_2c.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_25.mp3",
+"id": "Story_5_Ctanlee_25.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Sektimus_3.mp3",
+"id": "Story_5_Sektimus_3.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_26a.mp3",
+"id": "Story_5_Ctanlee_26a.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_26b.mp3",
+"id": "Story_5_Ctanlee_26b.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_26c.mp3",
+"id": "Story_5_Ctanlee_26c.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Sektimus_4.mp3",
+"id": "Story_5_Sektimus_4.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_27.mp3",
+"id": "Story_5_Ctanlee_27.mp3"
+}
+]
+},
+"3": {
+"title": "Chapter 3",
+"mp3s": [
+{
+"src": "episodes/global/sounds/MU_Attack_Music.mp3",
+"id": "~g/MU_Attack_Music.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_HumanWalking.mp3",
+"id": "~4/CIN_HumanWalking.mp3"
+},
+{
+"src": "episodes/global/sounds/SFX_AttackSlamdown_AuditBot.mp3",
+"id": "~g/SFX_AttackSlamdown_AuditBot.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_BlackOutGrid.mp3",
+"id": "~4/CIN_BlackOutGrid.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_28.mp3",
+"id": "Story_5_Ctanlee_28.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_29.mp3",
+"id": "Story_5_Ctanlee_29.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_30.mp3",
+"id": "Story_5_Ctanlee_30.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_31.mp3",
+"id": "Story_5_Ctanlee_31.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_32.mp3",
+"id": "Story_5_Ctanlee_32.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_33.mp3",
+"id": "Story_5_Ctanlee_33.mp3"
+},
+{
+"src": "episodes/episode4/sounds/SFX_VisitorEscortSystem_GuestLogBook.mp3",
+"id": "~4/SFX_VisitorEscortSystem_GuestLogBook.mp3"
+},
+{
+"src": "episodes/episode4/sounds/SFX_VisitorEscortSystem_EscortLeash.mp3",
+"id": "~4/SFX_VisitorEscortSystem_EscortLeash.mp3"
+},
+{
+"src": "episodes/episode4/sounds/SFX_VisitorEscortSystem_VisitorTractorBeam.mp3",
+"id": "~4/SFX_VisitorEscortSystem_VisitorTractorBeam.mp3"
+},
+{
+"src": "episodes/episode4/sounds/CIN_DoorOpen.mp3",
+"id": "~4/CIN_DoorOpen.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_34.mp3",
+"id": "Story_5_Ctanlee_34.mp3"
+},
+{
+"src": "episodes/episode4/sounds/Story_5_Ctanlee_35.mp3",
+"id": "Story_5_Ctanlee_35.mp3"
+},
+{
+"src": "episodes/global/sounds/SFX_Level_MasterCadet.mp3",
+"id": "~g/SFX_Level_MasterCadet.mp3"
+}
+]
+}
+}
+}

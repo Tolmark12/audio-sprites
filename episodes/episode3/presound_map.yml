@@ -1,0 +1,741 @@
+episode: 3
+title: Episode 3
+subtitle: Asset Defenses
+rankId: technical-cadet
+nextRankId: cyber-cadet
+labels: !!inc/file ./episodes/global/_labels.yaml
+
+# CHAPTER 1
+chapters:
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 1
+  # ----------------------------------------------
+  -
+    title: Chapter 1
+    subtitle: Securing Asset Connections
+    kind: chapter
+    slides:
+      # 1 Background Build in ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 0, content: ~1/c1-sky.svg }
+            - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
+            - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true}
+            - {depth: 4, content: $facilityLoop, loop: true }
+            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true}
+            - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
+            - {depth: 7, content: $eacmsBuild, jumpToEnd: true, cache: true }
+        duration: {kind: time, seconds: 1 }
+      # 1 Dialogue Intro ==========================================
+      -
+        title: Asset Connections
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Asset Connections
+                body: Even the best prepared security perimeters can be breached, so the <a data-label="cip">CIP Standards</a> require that we turn each asset into a veritable fortress. Multiple extra levels of defense guarantee that if the enemy ever gets inside a perimeter, they will still have an oily battle ahead of them. <br/><br/>The simulator will illustrate how an attacker can connect to an asset even with a strong <a data-label="psp">PSP</a> and <a data-label="esp">ESP</a> in place.
+                btn:
+                  style: lightning
+                  text: run simulator
+                  action: {cmd: slides.next-slide}
+      # 1 Simulation A ==========================================
+      -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3, loop: true }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 6500, volume: 0.1, loop: 2 }
+          - {content: ~3/CIN_RobotTossing.mp3, delay: 100, volume: 0.1, loop: 2 }
+          - {content: ~g/SFX_AttackSlamdown_FlashBot.mp3, delay: 22000, volume: 1}
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 31000, volume: 0.1, loop: 2 }
+          - {content: ~3/2001_Space.mp3, delay: 35400, volume: 1}
+        movie:
+          layers:
+            - {depth: 8, content: kettle_bush_attack.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+          actions:
+            a:
+              next: 13000
+              pos: []
+            b:
+              emo: right
+              pos: [170,550]
+              text: "No, no, no. Don't be fooled by that!"
+              audio: Story_4_Ctanlee_1.mp3
+            c:
+              next: 33500
+              pos: []
+            d:
+              pos: [170,550]
+              text: "These robots have taken control of the operator console and are overloading our transmission lines."
+              audio: Story_4_Ctanlee_2.mp3
+            e:
+              next: 1500
+              pos: [170,550]
+            f:
+              pos: [300,240]
+              text: "Simulator Pause!"
+              audio: Story_4_Ctanlee_3.mp3
+        duration: {kind: ux }
+      # 1 Dialogue Ports==========================================
+      -
+        title: Port Security
+        movie:
+          layers:
+            - {depth: 8, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Port Security
+                body: As you can see, many attacks happen when someone plugs a compromised USB drive or cell phone into a physical port on a <a data-label="crca">CRCA</a>, bypassing our perimeter defenses. We protect an asset's physical ports from accidental plug-ins through physical locks, tamper tape, or similar methods. <br/><br/>Just like we added a firewall to control electronic communication into the <a data-label="esp">ESP</a>, we install software firewalls (or similar protections) on <a data-label="crca">CRCAs</a> to deny unauthorized electronic communication with that asset. <br/><br/>Technical <a data-label="defenders">Defenders</a> typically install these protections, but everyone must be vigilant not to go around them.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Zoom to Asset Perimeter ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 8, content: ~g/perimeter_ports.json }
+        duration: {kind: time, seconds: 1.5 }
+      # 1 Port Defense Selector ==========================================
+      - !!inc/file ./episodes/episode3/yaml/_port-defense-selector.yaml
+      # 1 Animate Selector Build ==========================================
+      -
+        sfx:
+          - {content: $portSFX, volume: 1}
+        movie:
+          layers:
+            - {depth: 9, content: $portBuild, events: [complete] }
+        duration: {kind: time, seconds: 3 }
+      # 1 Animate Install Port Security ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 8, content: clear }
+            - {depth: 10, content: $portInstall }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          actions:
+            a:
+              pos: [100,100]
+              text: "Richard, you have firewalls and physical port protections to install. Get cracking."
+              audio: Story_4_Ctanlee_7.mp3
+            b:
+              pos: [100,100]
+              next: 16000
+            c:
+              pos: [100,100]
+              text: "You sure know how to accessorize."
+              audio: Story_4_Ctanlee_8.mp3
+        duration: {kind: dialogue }
+      # 1 Dialogue Try Again ==========================================
+      -
+        title: Please Try Again
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Please Try Again
+                body: Firewalls and physical port protections are now installed on each asset. We've already seen how firewalls conceptually work, so we'll focus the simulation on demonstrating the physical port protection you selected.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 1 Simulation==========================================
+      -
+        sfx:
+          #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume: 0.5}
+          - {content: $portSFX, delay: 7900, volume: 0.5}
+        movie:
+          layers:
+            - {depth: 10, content: $portDefend, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              next: 9500
+              pos: []
+            b:
+              emo: down
+              pos: [600,240]
+              text: "Hey FlashBot, do you feel the rejection?"
+              audio: Story_4_Ctanlee_10.mp3
+            c:
+              next: 2000
+              pos: [700,240]
+            d:
+              pos: [530,400]
+              text: "Duty Time!"
+              audio: Story_4_Ctanlee_11.mp3
+        duration: {kind: ux }
+      # 1 Duties ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 9, content: clear }
+            - {depth: 10, content: clear }
+        action: {cmd: ctanlee.gohome}
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP3CH1}
+        duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 2
+  # ----------------------------------------------
+  -
+    title: Chapter 2
+    subtitle: Software Defenses
+    kind: chapter
+    slides:
+      # 2 Dialogue Softer Side ==========================================
+      -
+        title: The Softer Side of Defense
+        movie:
+          layers:
+            - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: The Softer Side of Defense
+                body: We just built physical and electronic perimeters around each <a data-label="crca">CRCA</a>, so now it's time to protect the "insides" of our assets.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 2 Dialogue Patch Assets ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 9, content: workstation_pointers.json }
+        title: Patching Your Assets
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Patching Your Assets
+                body: The software installed on our <a data-label="crca">CRCAs</a> often have security flaws that our enemies will use to launch attacks. Most software companies provide updates called "patches" that fix these flaws as they are discovered, so we regularly check for and install security-related patches for all software on our <a data-label="crca">CRCAs</a> - the operating system, control system software, or your Global Robo-Nuclear WarTM game. <br/><br/>We assess new patches at least once every 35 days, and install them on assets within 35 days of assessment. Patches that cause system reliability issues can be skipped if a mitigation plan is created.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 2 Dialogue Malicious Code Defense ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 9, content: clear }
+        title: Malicious Code Defenses
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Malicious Code Defenses
+                body: A common goal of attackers is to get a software virus or other malicious code (called malware) installed on a <a data-label="crca">CRCA</a>, so we install antivirus software on each asset that identifies and removes malware. The robots and their allies are constantly creating new malware, so we must regularly update our anti-virus software to detect the latest threats. There are other <a data-label="cip">CIP</a>-compliant ways to protect against malware, but anti-virus is very common.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 2 Sektimus Interlude ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 9, content: fatline_e41.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: l }
+            - {action: m }
+            - {action: n }
+            - {action: o }
+            - {action: p }
+            - {action: q }
+            - {action: r }
+          actions:
+            a:
+              pos: [170,300]
+              text: Defender, Sektimus is trying to communicate with us again.
+              audio: Story_4_Ctanlee_12.mp3
+            b:
+              pos: [200,400]
+              text: WarCore, patch him through.
+              audio: Story_4_Ctanlee_13.mp3
+            c:
+              next: 1000
+              pos: []
+            d:
+              audio: Story_4_Warcore_1.mp3
+              actor: warcore
+              text: Working… Done.
+            e:
+              next: 2000
+              pos: []
+            f:
+              audio: Story_4_Sektimus_1a.mp3
+              actor: sektimus
+              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend"
+            g:
+              audio: Story_4_Sektimus_1b.mp3
+              actor: sektimus
+              text:  I'm here to spend some time with you - I know failure hurts and I want to make sure this failure hurts you especially deeply.
+            h:
+              audio: Story_4_Sektimus_1c.mp3
+              actor: sektimus
+              text: Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return?
+            i:
+              next: 1500
+              pos: []
+            j:
+              pos: [270,400]
+              text: Cadet … Please lean toward the screen!
+              audio: Story_4_Ctanlee_14.mp3
+            k:
+              next: 1000
+              pos: []
+            l:
+              audio: Story_4_Sektimus_2a.mp3
+              actor: sektimus
+              text: What?? You're still here? Do you know who you contend with, human?
+            m:
+              audio: Story_4_Sektimus_2b.mp3
+              actor: sektimus
+              text: I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds.
+            n:
+              audio: Story_4_Sektimus_2c.mp3
+              actor: sektimus
+              text: I am LEGION.
+            o:
+              next: 1000
+              pos: []
+            p:
+              audio: Story_4_Sektimus_3a.mp3
+              actor: sektimus
+              text: Human. Your limited mind might have trouble comprehending the situation, so let me use simple terms.
+            q:
+              audio: Story_4_Sektimus_3b.mp3
+              actor: sektimus
+              text: CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth.
+            r:
+              audio: Story_4_Sektimus_3c.mp3
+              actor: Will you accept this, my final offer?
+              text: Human.
+        duration: {kind: dialogue }
+      # 2 Sektimus Will you Train? ==========================================
+      - !!inc/file ./episodes/episode3/yaml/_simple-sektimus.yaml
+      # 2 Sektimus Interlude ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 9, content: fatline_e42.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          actions:
+            a:
+              pos: []
+              audio: Story_4_Sektimus_4.mp3
+              actor: sektimus
+              text: You think this is some sort of JOKE? I'll be back.
+            b:
+              pos: [270,300]
+              text:  Nicely handled, Cadet. You have surprised Sektimus and that's no mean accomplishment. I suspect we haven't seen the last of him, so be ready. WarCore, back to the simulator!
+              audio: Story_4_Ctanlee_15.mp3
+            c:
+              next: 2000
+              pos: []
+        duration: {kind: dialogue }
+      # 2 Dialogue Software Defense ==========================================
+      -
+        title: It's a Team Effort
+        movie:
+          layers:
+            - {depth: 9, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: It's a Team Effort
+                body: Richard has been given the responsibility at our facility to keep the servers and workstations patched and anti-virus updated. Go Richard! <br/><br/>It's common that technical <a data-label="defenders">Defenders</a> like Richard install patches and maintain the antivirus software, but every <a data-label="defenders">Defender</a> has a role to play. System users often experience downtime or computer restarts during patch installations, so please be patient. Users can also inadvertently install malware on a computer, so we must all be vigilant.
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
+      # 2 Duties ==========================================
+      -
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP3CH2}
+        duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 3
+  # ----------------------------------------------
+  -
+    title: Chapter 3
+    subtitle: Changing Assets
+    kind: chapter
+    slides:
+      # 3 Dialogue Changing Assets ==========================================
+      -
+        title: Changing Assets
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Changing Assets
+                body: Think about all the changes we make - we add and remove workstations and servers, deploy new versions of software, install patches, and many other things. Every change has the potential to open up a crack in our defenses, so <a data-label="cip">CIP</a> requires processes to add, update, and remove assets. <br/><br/>Let's start with one of many attacks that are possible when making changes.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 3 Simulation Attack ==========================================
+      -
+        sfx:
+          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/SFX_AttackSlamdown_MimeBot.mp3, delay: 21000, volume: 0.2}
+        movie:
+          layers:
+            - {depth: 9, content: change_assets_fail.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+          actions:
+            a:
+              next: 7000
+              pos: []
+            b:
+              emo: down
+              pos: [400,280]
+              text: "Looks like Rod's workstation is old and causing problems. His supervisor requested an upgrade."
+              audio: Story_4_Ctanlee_19.mp3
+            c:
+              next: 26000
+              pos: []
+            d:
+              emo: down
+              pos: [700,240]
+              text: "Wait a second! Don't plug that computer into the ESP network - Who knows what that MimeBot installed on it. It's a security nightmare!"
+              audio: Story_4_Ctanlee_20.mp3
+            e:
+              next: 11500
+              pos: []
+            f:
+              emo: left
+              pos: [320,360]
+              text: "The computer just dialed out to the KettleHead. He's taking command of the system."
+              audio: Story_4_Ctanlee_21.mp3
+            g:
+              next: 1500
+              pos: [320,360]
+            h:
+              pos: [600,250]
+              text: "We know how this will end. Simulator pause!"
+              audio: Story_4_Ctanlee_22.mp3
+        duration: {kind: ux }
+      # 3 Dialogue More Problems ==========================================
+      -
+        title: More Problems
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: More Problems
+                body: The problems don't end here. Keep your eye on that old workstation.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 3 Simulation Attack ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 9, content: change_assets_fail_part_2.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          actions:
+            a:
+              next: 17500
+              pos: []
+            b:
+              next: 6800
+              pos: [300,300]
+              text: "No problem. I'm sure Richard cleaned all that data off…"
+              audio: Story_4_Ctanlee_23.mp3
+            c:
+              emo: down
+              pos: [300,300]
+              text: "Orrrrrr not. Simulator Pause!"
+              audio: Story_4_Ctanlee_24.mp3
+        duration: {kind: ux}
+      # 3 Dialogue Baseline Configuration 1 ==========================================
+      -
+        title: Adding Assets
+        movie:
+          layers:
+            - {depth: 9, content: clear }
+            - {depth: 9, content: workstation_assets_1.json }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Adding Assets
+                body: Our defenses are weakened if someone connects an unsecured asset to our <a data-label="esp">ESP</a>, so <a data-label="cip">CIP<a/> requires a process before adding a new <a data-label="crca">CRCA</a>&#58; <ol type="1"><li>Baseline Configuration - Document the <a data-label="crca">CRCA</a> setup</li><li>Vulnerability Assessment - Test if the <a data-label="crca">CRCA</a> is secure and <a data-label="cip">CIP</a>-defenses installed</li><li>Compliance Documentation - Document approval to install</li><li>Install in Production - Install the <a data-label="crca">CRCA</a></li></ol>
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 3 Dialogue Baseline Configuration 5 ==========================================
+      -
+        title: Updating Assets
+        movie:
+          layers:
+            - {depth: 9, content: workstation_assets_2.json }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Updating Assets
+                body: Rod may need a control system upgrade after his workstation is setup or perhaps patches need to be installed. The process for updating existing <a data-label="crca">CRCAs</a> is similar to adding new ones. <ol type="1"><li>Install in Test System - Look for security issues with the change</li><li>Compliance Documentation - Document approval to install</li><li>Install in Production - Update the <a data-label="crca">CRCA</a></li><li>Baseline Configuration - Document changes to <a data-label="crca">CRCA</a> (within 30 days of install)</li></ol>
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 3 Dialogue Disposing Assets ==========================================
+      -
+        title: Disposing Assets
+        movie:
+          layers:
+            - {depth: 9, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Disposing Assets
+                body: Robots love dumpster diving and are proficient at extracting information from assets to give them an edge in their attack planning, so we must remove <a data-label="bcsi">BCSI</a> from a device before it is thrown away or repurposed. This isn't just deleting files - it's permanent eradication like erasing the data with a magnet or pulverizing/incinerating the equipment. <br/><br/>Sounds like fun, doesn't it?
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 3 Zoom Perimeter View ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 10, content: ~g/perimeter_change.json }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 1.5 }
+      # 3 Asset Change Tools Selector ==========================================
+      - !!inc/file ./episodes/episode3/yaml/_asset-change-selector.yaml
+      # 3 Animate Selector Build ==========================================
+      -
+        sfx:
+          - {content: $changeSFX, volume: 1}
+        movie:
+          layers:
+            - {depth: 9, content: $changeBuild, events: [complete] }
+        duration: {kind: time, seconds: 5}
+      # 3 Dialogue Mulligan ==========================================
+      -
+        title: Calling a Mulligan
+        action: {cmd: ctanlee.gohome}
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+          zoom: {scale: 1 }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Calling a Mulligan
+                body: Let's thwart those robots.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 3 Simulation Asset Change ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 11, content: $changePass, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+          actions:
+            a:
+              next: 6000
+              pos: []
+            b:
+              emo: left
+              pos: [625,570]
+              text: "And let's check in on the team. Richard set up the workstation and documented the configuration. Good job, Richard."
+              audio: Story_4_Ctanlee_28.mp3
+            c:
+              next: 1000
+              pos: [625,600]
+            d:
+              emo: left
+              pos: [625,610]
+              text: "Now he's running the vulnerability assessment and fixing all the issues."
+              audio: Story_4_Ctanlee_29.mp3
+            e:
+              next: 5000
+              pos: [625,610]
+            f:
+              emo: left
+              pos: [150,500]
+              text: "And here comes Brad. Brad updates documentation. Well done Brad."
+              audio: Story_4_Ctanlee_30.mp3
+            g:
+              emo: left
+              pos: [470,460]
+              text: "And now Rod's supervisor, Lisa, approves the change. Well done Lisa. We're safe to install. This is very entertaining, it's much more fun than watching cricket."
+              audio: Story_4_Ctanlee_31.mp3
+            h:
+              next: 9000
+              pos: [700,490]
+              text: "You fought well, bot. But we fought so much better. Now let's dispose of that old workstation."
+              audio: Story_4_Ctanlee_32.mp3
+        duration: {kind: ux }
+      # 3 Dialogue Duties review ==========================================
+      -
+        title: Bravo Cadet!
+        movie:
+          layers:
+            - {depth: 11, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Bravo Cadet!
+                body: Our assets are protected from unauthorized connections, have software defenses installed, and the team has good change control processes. After you review your duties and complete testing, we'll learn how your Defenders get access to facilities and assets so they can get their jobs done.
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
+      # 3 Duties ==========================================
+      -
+        action: {cmd: ctanlee.gohome}
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP3CH1}
+        duration: {kind: ux}
+      # 3 Quiz ==========================================
+      -
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: quiz
+              config:
+                source: sample
+      # 3 Rank Advance ==========================================
+      -
+        sfx:
+          - {content: ~g/SFX_Level_CyberCadet.mp3, volume:1}
+        movie:
+          layers:
+            - {depth: 11, background: black, content: ~g/cyber_cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.11.complete }

@@ -1,0 +1,45 @@
+title: Round Two
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [200, 50]
+  actions:
+    a:
+      emo: happy
+      text: "Correct! We stopped the information from leaving the facility. We're 100% compliant, though my algorithms predict a 98% chance of lawsuit for the dogpile method- Let's look at one final example."
+      audio: Story_2_Ctanlee_21.mp3
+    b:
+      emo: sad
+      text: "Sorry. The photos never left the facility"
+      audio: Story_2_Ctanlee_22.mp3
+    c:
+      emo: surprize
+      text: "Nope. The photos didn't leave the facility."
+      audio: Story_2_Ctanlee_23.mp3
+ux:
+  components:
+    -
+      kind: simple-selection
+      config:
+        hasLabels: true
+        title: Round Two
+        subTitle: Wow, I guess that is one method for stopping <a data-label="bcsi">BCSI</a> from leaving the facility. How would an auditor classify this?
+        items:
+          -
+            btnTxt: Good Catch
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: ctanlee.add-event-listener
+                data:
+                  event: complete
+                  action:
+                    - {cmd: slides.next-slide}
+                    - {cmd: ctanlee.gohome}
+          -
+            btnTxt: Self-Report
+            click: {cmd: ctanlee.activate, data: b}
+          -
+            btnTxt: Violation
+            click: {cmd: ctanlee.activate, data: c}

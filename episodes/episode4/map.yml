@@ -1,0 +1,871 @@
+episode: 4
+title: Episode 4
+subtitle: Manning the Defenses
+rankId: cyber-cadet
+nextRankId: master-cadet
+labels: !!inc/file ./episodes/global/_labels.yaml
+action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+# CHAPTER 1
+chapters:
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 1
+  # ----------------------------------------------
+  -
+    title: Chapter 1
+    subtitle: Defender Access
+    kind: chapter
+    slides:
+      # 1 Background Build in ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 0, content: ~1/c1-sky.svg }
+            - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
+            - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true}
+            - {depth: 4, content: $facilityLoop, loop: true }
+            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true}
+            - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
+            - {depth: 7, content: $eacmsBuild, jumpToEnd: true, cache: true }
+            - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
+            - {depth: 9, content: $changeBuild, jumpToEnd: true, cache: true }
+        duration: {kind: time, seconds: 1 }
+      # 1 Zoom to Asset Views ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 10, content: ~g/perimeter_e5_physical.json }
+        duration: {kind: time, seconds: 1 }
+      # 1 Dialogue Intro ==========================================
+      -
+        title: Perimeter and Asset Access
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Perimeter and Asset Access
+                body: Our defenses are up! Now we need to ensure only authorized <a data-label="defenders">Defenders</a> have the access they need&#58; <ul><li><a data-label="physical_access" class="new">Physical Access</a> to open the door and enter the <a data-label="psp">PSP</a>.</li><li><a data-label="electronic_access" class="new">Electronic Access<a/> to logon to workstations, servers, and other <a data-label="crca">CRCAs</a>.</li><li><a data-label="information_access" class="new">Information Access</a> to file shares, filing cabinets, and other <a data-label="bcsi">BCSI</a> locations.</li></ul>The robots obviously want any access they can get, so let's see what can happen.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 1 Simulation A ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~4/CIN_HumanExcited.mp3, delay: 3700, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 4700, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .2, loop: 2}
+          - {content: ~4/CIN_HumanExcited.mp3, delay: 17300, volume: .1 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 22500, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 23500, volume: 0.1 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 27000, volume: .2, loop: 2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 29000, volume: 0.1 }
+          - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: .3}
+          - {content: ~4/CIN_RobotsMovingExplosion.mp3, delay: 51400, volume: .4}
+        movie:
+          layers:
+            - {depth: 10, content: 5_defender_access_fail.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+          actions:
+            a:
+              next: 2000
+              pos: []
+            b:
+              emo: left
+              pos: [710,390]
+              text: "Rod? Jumping up and down. Look at him go. What? He just won the lottery! Look at that! Look at Rod go. Give me a high five Rod! Yes… well…. if I had hands. <br/><br/>We need a new operator."
+              audio: Story_5_Ctanlee_1.mp3
+            c:
+              next: 3000
+              pos: []
+            d:
+              pos: [450,430]
+              text: "And Jerry in HR can help us hire a successor."
+              audio: Story_5_Ctanlee_2.mp3
+            e:
+              next: 7000
+              pos: []
+            f:
+              emo: down
+              pos: [200,450]
+              text: "Great Gravy! What's up with your thumb?"
+              audio: Story_5_Ctanlee_3.mp3
+            g:
+              next: 14300
+              pos: []
+            h:
+              pos: [100,100]
+              text: "You're a robo-sympathizer. You shouldn't have been approved to access our facility!"
+              audio: Story_5_Ctanlee_4.mp3
+            i:
+              next: 2000
+              pos: []
+            j:
+              pos: [500,300]
+              text: "Simulator pause!"
+              audio: ~3/Story_4_Ctanlee_3.mp3
+        duration: {kind: ux }
+      # 1 Dialogue Removing Access ==========================================
+      -
+        title: Removing Access
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        movie:
+          layers:
+            - {depth: 10, content: clear}
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Removing Access
+                body: Our <a data-label="defenders">Defenders</a> never removed Rod's door system and workstation accounts after he quit his job, so he still has Physical and Electronic Access. Once a <a data-label="defenders">Defender</a> leaves their job, we must disable Physical Access and Electronic Access within 24 hours. This effectively cuts the person off from our facilities and CRCAs. Any user accounts must be completely removed and shared passwords they know changed within 30 days.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue Removing Access ==========================================
+      -
+        title: Granting Access
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Granting Access
+                body: In the simulation, we granted <a data-label="physical_access">Physical Access</a> to a malicious agent of the robots. To avoid this, we must carefully evaluate employees, vendors and contractors before we give them <a data-label="physical_access">Physical Access</a> or <a data-label="electronic_access">Electronic Access</a> to our assets. This is the required process&#58; <ol><li>Personnel Risk Assessment - Check the person's background for risks and criminal activity</li><li>Cyber-Security Training - Teach the person about cyber threats and their duties as a <a data-label="defenders">Defender</a></li><li>Compliance Documentation - Document access needed and management approval</li><li>Configure Access - Grant the person access to facilities, assets, and information</li></ol>
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Port Defense Selector ==========================================
+      - !!inc/file ./episodes/episode4/yaml/_access-control-selector.yaml
+      # 1 Animate Selector Build ==========================================
+      -
+        sfx:
+          - {content: $accessSFX, delay: 700, volume: 0.1}
+        movie:
+          layers:
+            - {depth: 10, content: $accessBuild }
+        duration: {kind: time, seconds: 3.5}
+      # 1 Dialogue Removing Access ==========================================
+      -
+        title: Once More Unto the Breach
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Once More Unto the Breach
+                body: Let's see how everyone works together to ensure only those on the side of humanity gain access.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 1 Simulation Compliance ==========================================
+      -
+        sfx:
+          - {content: ~4/CIN_HumanExcited.mp3, delay: 100, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 100, volume: .1, loop: 1 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 800, volume: .2 }
+          - {content: ~4/CIN_Typing.mp3, delay: 5700, volume: .05, loop: 2 }
+        movie:
+          layers:
+            - {depth: 11, content: $accessPassA, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              pos: []
+              next: 3000
+            b:
+              emo: left
+              pos: [600,500]
+              text: "Lisa started the access removal process for Rod."
+              audio: Story_5_Ctanlee_9.mp3
+            c:
+              emo: left
+              pos: [250,400]
+              text: "Brad will update documentation and Richard will disable Rod's accounts."
+              audio: Story_5_Ctanlee_10.mp3
+            d:
+              emo: left
+              pos: [700,250]
+              text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
+              audio: Story_5_Ctanlee_11.mp3
+        duration: {kind: ux}
+      # 1 Simulation Retry Unsavory Fail ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 2500, volume: .1 }
+          - {content: ~4/CIN_ScannerShock.mp3, delay: 5000, volume: 0.4 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 8000, volume: .1 }
+        movie:
+          layers:
+            - {depth: 11, content: $accessPassB, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          actions:
+            a:
+              pos: [250,500]
+              text: "Jerry will now use his Personnel Risk Assessment. This will catch you."
+              audio: Story_5_Ctanlee_12.mp3
+            b:
+              pos: [250,500]
+              next: 2500
+            c:
+              pos: [250,500]
+              text: "I relish your demise, unworthy opponent. Let's hire a worthy successor for Rod."
+              audio: Story_5_Ctanlee_13.mp3
+        duration: {kind: ux }
+      # 1 Simulation Retry Cindy Pass ==========================================
+      -
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        sfx:
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 4500, volume: .1 }
+          - {content: $accessSFX, delay: 7600, volume: 0.1 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 20000, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 29000, volume: .1 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 34000, volume: .1 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 37000, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 37000, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 43000, volume: .05 }
+        movie:
+          layers:
+            - {depth: 11, content: $accessPassC, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+          actions:
+            a:
+              next: 2500
+              pos: []
+            b:
+              emo: left
+              pos: [380,570]
+              text: "Here's another candidate."
+              audio: Story_5_Ctanlee_14.mp3
+            c:
+              next: 11500
+              pos: [380,570]
+            d:
+              emo: left
+              pos: [290,400]
+              text: "That's some top quality training. Look at the little Warmind there. He's cute."
+              audio: Story_5_Ctanlee_15_alt.mp3
+            f:
+              emo: right
+              pos: [350,400]
+              text: "Lisa approves Cindy's access and Brad updates documentation."
+              audio: Story_5_Ctanlee_16.mp3
+            g:
+              pos: [550,450]
+              text: "So now we're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
+              audio: Story_5_Ctanlee_17.mp3
+            h:
+              next: 16700
+              pos: []
+            i:
+              emo: down
+              pos: [580,220]
+              text: "Bravo everyone! Simulator Pause."
+              audio: Story_5_Ctanlee_18.mp3
+        duration: {kind: ux }
+      # 1 Dialogue Information Access ==========================================
+      -
+        title: Information Access
+        movie:
+          layers:
+            - {depth: 11, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Information Access
+                body: For <a data-label="defenders">Defenders</a>, access to <a data-label="bcsi">BCSI</a> is typically granted along with their <a data-label="physical_access">Physical Access</a> and <a data-label="electronic_access">Electronic Access</a>. Vendors, consultants, and other employees without this level of access often need to see <a data-label="bcsi">BCSI</a>, so <a data-label="cip">CIP</a> allows organizations flexibility to define how they share this information. For example, some organizations require vendors to sign an NDA before receiving <a data-label="bcsi">BCSI</a> and confirm in writing they have destroyed <a data-label="bcsi">BCSI</a> at the conclusion of a project.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue Access Audits ==========================================
+      -
+        title: Access Audits
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Access Audits
+                body: Any complex process requires oversight, so we annually review our documented access permissions to ensure we provide the fewest permissions needed for our <a data-label="defenders">Defenders</a> to perform their jobs. We also do a quarterly check of actual permissions in the systems against the documented permissions to discover any mismatches and correct them. <br/><br/><a data-label="cip">CIP</a> has given our <a data-label="defenders">Defenders</a> processes to securely remove access, grant access, and audit our work. Let's learn your duties.
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
+      # 1 Duties ==========================================
+      -
+        title: Duties
+        action: {cmd: ctanlee.gohome}
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP4CH1}
+        duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 2
+  # ----------------------------------------------
+  -
+    fid: ep4-ch2
+    title: Chapter 2
+    subtitle: User Accounts
+    kind: chapter
+    slides:
+      # 2 Dialogue User Accounts ==========================================
+      -
+        title: User Accounts
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: User Accounts
+                body: After our new operator was approved for access, Richard created a <a data-label="user_account" class="new">User Account</a> for Cindy that gave her <a data-label="electronic_access">Electronic Access</a> to use the control system software on her workstation. When Cindy logs in each morning, she enters a username and password for this user account to validate her identity and access the system. <br/><br/>The robots would love to learn Cindy's username and password, so we must protect her <a data-label="user_account">User Account</a>. This chapter teaches the defenses that keep these accounts from falling into the metallic hands of the robots.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 2 Dialogue User Accounts 1 ==========================================
+      -
+        title: Account Attacks
+        sfx:
+          - {content: ~4/CIN_Typing.mp3, delay: 2100, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 6000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 8500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 11000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 13500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 15700, volume: .1, loop: 1 }
+        movie:
+          layers:
+            - {depth: 11, content: ~g/user_account_1.json  }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Account Attacks
+                body: To make Cindy's password hard for the bots to guess, our passwords must have a minimum length and complexity to ensure they are difficult to guess. However, even with a complex password, robots can use special tools to perform a <a data-label="brute" class="new">Brute-Force Attack</a> where they rapidly try many millions of usernames and passwords until they find a match. Let's see a <a data-label="brute">Brute-Force Attack</a> in action against Cindy's account.
+                btn:
+                  style: lightning
+                  text: simulate
+                  action: {cmd: slides.next-slide}
+      # 2 Simulation Brute Force Fail ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~4/CIN_Typing.mp3, delay: 9500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 11890, volume: .1}
+          - {content: ~4/CIN_Typing.mp3, delay: 14200, volume: .1, loop: 2}
+          - {content: ~4/CIN_Typing.mp3, delay: 19200, volume: .1 }
+          - {content: ~4/CIN_AccessGranted.mp3, delay: 21500, volume: .1 }
+        movie:
+          layers:
+            - {depth: 11, content: 5_user_account_fail.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              next: 1500
+              pos: []
+            b:
+              pos: [150,350]
+              text: "This robot found a way through our firewalls and is attempting to log into the control system."
+              audio: Story_5_Ctanlee_19.mp3
+            c:
+              next: 15000
+              pos: []
+            d:
+              emo: left
+              pos: [730,420]
+              text: "He has access. Simulator pause."
+              audio: Story_5_Ctanlee_20.mp3
+        duration: {kind: ux }
+      # 2 Simulation Brute Force Fail Clear ==========================================
+      -
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        movie:
+          layers:
+            - {depth: 11, content: clear }
+        duration: {kind: time, seconds: .5 }
+      # 2 Dialogue Brute Force Defenses ==========================================
+      -
+        title: Brute-Force Defenses
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Brute-Force Defenses
+                body: We protect against <a data-label="brute">Brute-Force</a> and other <a data-label="user_account">User Account</a> attacks with regular password changes and account locking/alerting. We must change our passwords at least once a year. We also lock accounts after several failed logins and/or implement alerts so a technical <a data-label="defenders">Defender</a> can investigate if an attack is underway. <br/><br/>Richard just enabled locking and alerting on all user accounts, so let's see if the Kettlehead's <a data-label="brute">Brute-Force Attack</a> is still effective.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 2 Simulation Retry Brute Force Pass ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~4/CIN_Typing.mp3, delay: 6600, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 8730, volume: .1}
+          - {content: ~4/CIN_Typing.mp3, delay: 11200, volume: .1, loop: 1}
+        movie:
+          layers:
+            - {depth: 11, content: 5_user_account_pass.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+          actions:
+            a:
+              next: 1500
+              pos: []
+            b:
+              pos: [250,400]
+              text: "You won't get far this time."
+              audio: Story_5_Ctanlee_21.mp3
+            c:
+              next: 12500
+              pos: []
+            d:
+              pos: [100,200]
+              text: "Richard was notified of your login attempts and discovered the firewall issue that let you in. He is fixing it now."
+              audio: Story_5_Ctanlee_22.mp3
+            e:
+              next: 3500
+              pos: [100,200]
+            f:
+              pos: [100,400]
+              text: "The spirit is willing, but the metal is weak."
+              audio: Story_5_Ctanlee_23.mp3
+        duration: {kind: ux }
+      # 2 Simulation Brute Force Pass Clear ==========================================
+      -
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        movie:
+          layers:
+            - {depth: 11, content: clear }
+        duration: {kind: time, seconds: .5 }
+      # 2 Dialogue Shared / Default Accounts ==========================================
+      -
+        title: Shared and Default Accounts
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Shared and Default Accounts
+                body: Some older <a data-label="crca">CRCAs</a> don't allow us to create accounts for each user. If multiple <a data-label="defenders">Defenders</a> need access to these devices, they must share the same username and password to login. If you use one of these <a data-label="shared" class="new">Shared Account</a>, act as if it's your personal account and don't share the login information with others. <br/><br/>Some <a data-label="crca">CRCAs</a> come pre-configured with accounts, so we disable or rename these <a data-label="default" class="new">Default Account</a> and change their passwords before putting the <a data-label="crca">CRCA</a> into in service. <br/><br/>We've covered protecting user accounts, shared accounts, and default accounts. Time to review our duties.
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
+      # 2 Sektimus Interlude ==========================================
+      # !SUSPECT
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.15, loop: true, slot: music} }
+        sfx:
+          - {content: ~3/CIN_Quarantine.mp3, delay: 1100, volume: .1 }
+        movie:
+          layers:
+            - {depth: 11, content: intercept_e5_1.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+          actions:
+            a:
+              pos: []
+              audio: Story_5_Warcore_1.mp3
+              actor: warcore
+              text: Sektimus transmission incoming.
+            b:
+              pos: []
+              audio: Story_5_Sektimus_1.mp3
+              actor: sektimus
+              text: Hello opponents. Perhaps I was too hasty in my last communication. I've been thinking…
+            c:
+              pos: [270,400]
+              text: Sektimus, enough of your games. This Cadet will not be swayed by anything you have to say.
+              audio: Story_5_Ctanlee_24.mp3
+            d:
+              pos: []
+              audio: Story_5_Sektimus_2a.mp3
+              actor: sektimus
+              text: Ah, CTANLEE. Always trying to sound bigger than you are.
+            e:
+              pos: []
+              audio: Story_5_Sektimus_2b.mp3
+              actor: sektimus
+              text: I just want to make sure this Defender is fully informed - you surely wouldn't object to that.
+            f:
+              pos: []
+              audio: Story_5_Sektimus_2c.mp3
+              actor: sektimus
+              text: After all, the human here may not know that CIP really doesn't cover every security attack and has many flaws. They shouldn't be wasting their time with it.
+            g:
+              pos: [270,400]
+              text: Sektimus, you waste your time trying to sway my Cadet. In fact, I think you're spending so much time here because you're afraid of this Cadet becoming a full Defender.
+              audio: Story_5_Ctanlee_25.mp3
+            h:
+              pos: []
+              audio: Story_5_Sektimus_3.mp3
+              actor: sektimus
+              text: Afraid? Fear is not in my circuitry.
+            i:
+              pos: [270,400]
+              text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with.
+              audio: Story_5_Ctanlee_26a.mp3
+            j:
+              pos: [270,400]
+              text: If you can give us an attack that our CIP defenses can't handle then we'll concede that this CIP training is futile and no match for your power.
+              audio: Story_5_Ctanlee_26b.mp3
+            k:
+              pos: [270,400]
+              text: Cadet, do you accept this challenge with me?
+              audio: Story_5_Ctanlee_26c.mp3
+
+        duration: {kind: dialogue }
+      # 2 Sektimus Do you Accept? ==========================================
+      - !!inc/file ./episodes/episode4/yaml/_simple-sektimus-e5.yaml
+      # 2 Sektimus Interlude ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 11, content: intercept_e5_2.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              pos: []
+              audio: Story_5_Sektimus_4.mp3
+              actor: sektimus
+              text: I accept the challenge as well. I have work to do.
+            b:
+              pos: []
+              next: 1500
+        duration: {kind: dialogue }
+      # 2 Sektimus Interlude Clear ==========================================
+      -
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        movie:
+          layers:
+            - {depth: 11, content: clear }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [270,300]
+              text: Let's continue training while Sektimus prepares his attack.
+              audio: Story_5_Ctanlee_27.mp3
+        duration: {kind: dialogue }
+      # 2 Duties ==========================================
+      -
+        title: Duties
+        action: {cmd: ctanlee.gohome}
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP4CH2}
+        duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 3
+  # ----------------------------------------------
+  -
+    title: Chapter 3
+    subtitle: Visitor Access
+    kind: chapter
+    slides:
+      # 3 Dialogue Visitor Access ==========================================
+      -
+        title: Visitor Access
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Visitor Access
+                body: We learned how access is managed for employees, vendors, and consultants, but sometimes we want to bring a <a data-label="visitor" class="new">Visitor</a> inside a <a data-label="psp">PSP</a> on a temporary basis. Visitors carry a host of risks. Let's see why.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 3 Simulation Auditbot ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2 }
+          - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 6000, volume: .3}
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 15200, volume: .2, loop: 2 }
+          - {content: ~4/CIN_BlackOutGrid.mp3, delay: 29500, volume: 1}
+        movie:
+          layers:
+            - {depth: 11, content: 5_auditbot_fail.json, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+          actions:
+            a:
+              next: 1500
+              pos: []
+            b:
+              pos: [790,485]
+              text: "Who are you? This isn't time for a scheduled audit."
+              audio: Story_5_Ctanlee_28.mp3
+            c:
+              next: 13500
+              pos: []
+            d:
+              emo: down
+              pos: [580,475]
+              text: "Arnold Aren't you going to follow him around?"
+              audio: Story_5_Ctanlee_29.mp3
+            e:
+              next: 8500
+              pos: []
+            f:
+              emo: down
+              pos: [650,220]
+              text: "He's blacked out part of the Grid. Simulator Pause!"
+              audio: Story_5_Ctanlee_30.mp3
+        duration: {kind: ux }
+      # 3 Dialogue Visitor Escort Procedure ==========================================
+      -
+        title: The Visitor Escort Procedure
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: The Visitor Escort Procedure
+                body: "Wow, that <a data-label='visitor'>Visitor</a> caused a lot of damage. To secure our facilities for tours, visits by auditors, and other short-term needs, we follow a <a data-label='visitor_escort' class='new'>Visitor Escort Procedure</a>: Defenders with <a data-label='physical_access'>Physical Access</a> to a <a data-label='psp'>PSP</a> can take a visitor inside if they log the <a data-label='visitor'>Visitor's</a> name, entry and exit time, and remain with the Visitor for the duration of the visit."
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 3 Dialogue Visitor Escort Procedure ==========================================
+      -
+        title: Visitor Limits
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Visitor Limits
+                body: The <a data-label="visitor_escort">Visitor Escort Procedure</a> is for <a data-label="physical_access">Physical Access</a> inside a <a data-label="psp">PSP</a> only. Visitors are not allowed to use workstations, servers, and other <a data-label="crca">CRCAs</a>. If a Visitor needs to interact with a system, they must relay instructions to a Defender with <a data-label="electronic_access">Electronic Access</a> to the system. To protect our <a data-label="bcsi">BCSI</a>, visitors are not allowed to take pictures inside a <a data-label="psp">PSP</a>. <br/><br/>Even if you are trained as a Defender, you are considered a Visitor (and must be escorted) to any PSPs you don't have documented <a data-label="physical_access">Physical Access</a> to. Access to one PSP doesn't mean access to all.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 3 Zoom Perimeter View ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 11, content: ~g/perimeter_door.json }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 1.5 }
+      # 3 Visitor Access Selector ==========================================
+      - !!inc/file ./episodes/episode4/yaml/_visitor-escort-selector.yaml
+      # 3 Animate Selector Build ==========================================
+      -
+        sfx:
+          - {content: $visitorSFX, volume: .3}
+        movie:
+          layers:
+            - {depth: 12, content: $visitorBuild, cache: true }
+          zoom: {scale: 1}
+        duration: {kind: time, seconds: 3.5}
+      # 3 Simulation Visitor Tracked ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        sfx:
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2, loop: 3 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 13900, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 14900, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 17500, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 23400, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 24900, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 12900, volume: .2, loop: 5 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 27300, volume: .2, loop: 2 }
+        movie:
+          layers:
+            - {depth: 11, content: clear }
+            - {depth: 13, content: $visitorPass, vcr: true }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          actions:
+            a:
+              next: 28000
+              pos: []
+            b:
+              emo: left
+              next: 2000
+              pos: [100,600]
+              text: "Nice job Arnold!"
+              audio: Story_5_Ctanlee_34.mp3
+            c:
+              pos: [780,380]
+              text: "Parting is such sweet sorrow, AuditBot."
+              audio: Story_5_Ctanlee_35.mp3
+        duration: {kind: ux }
+      # 3 Dialogue Home Stretch ==========================================
+      -
+        title: On the Home Stretch
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: On the Home Stretch
+                body: We have a process for securely granting and removing <a data-label="physical_access">Physical Access</a>, <a data-label="electronic_access">Electronic Access</a>, and <a data-label="information_access">Information Access</a>, we have safeguards on our <a data-label="user_account">User Accounts</a>, and <a data-label="visitor">Visitors</a> can securely access our <a data-label="cip"> PSPs through the <a data-label="visitor_escort">Visitor Escort Procedure</a>. Your mastery of defenses is now complete and your facility is fully protected. In our final episode, we learn how to Fight the War.
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
+      # 3 Duties ==========================================
+      -
+        title: Duties
+        movie:
+          layers:
+            - {depth: 13, content: clear }
+        action: {cmd: ctanlee.gohome}
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP4CH3}
+        duration: {kind: ux}
+      # 3 Quiz ==========================================
+      -
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: quiz
+              config:
+                source: EP4-CIP
+      # 3 Rank Advance ==========================================
+      -
+        sfx:
+          - {content: ~g/SFX_Level_MasterCadet.mp3, volume: 1}
+        movie:
+          layers:
+            - {depth: 13, background: black, content: ~g/master_cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.13.complete }

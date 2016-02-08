@@ -1,0 +1,75 @@
+{
+  "urls": [
+    "./sprites/episode4/chapter3/sprite.mp3"
+  ],
+  "sprite": {
+    "SFX_AttackSlamdown_AuditBot": [
+      31500,
+      2586.1224489795945
+    ],
+    "CIN_BlackOutGrid": [
+      34750,
+      1750.2040816326528
+    ],
+    "Story_5_Ctanlee_28": [
+      37000,
+      3265.306122448976
+    ],
+    "Story_5_Ctanlee_29": [
+      41250,
+      2272.6530612244887
+    ],
+    "Story_5_Ctanlee_30": [
+      44500,
+      4675.918367346938
+    ],
+    "Story_5_Ctanlee_31": [
+      49750,
+      4048.9795918367336
+    ],
+    "Story_5_Ctanlee_32": [
+      55000,
+      1697.9591836734685
+    ],
+    "Story_5_Ctanlee_33": [
+      57250,
+      1436.734693877554
+    ],
+    "SFX_VisitorEscortSystem_GuestLogBook": [
+      59500,
+      2377.1428571428573
+    ],
+    "SFX_VisitorEscortSystem_EscortLeash": [
+      62750,
+      2586.1224489795945
+    ],
+    "SFX_VisitorEscortSystem_VisitorTractorBeam": [
+      66000,
+      2690.612244897963
+    ],
+    "Story_5_Ctanlee_34": [
+      71500,
+      1253.877551020409
+    ],
+    "Story_5_Ctanlee_35": [
+      73750,
+      4336.32653061224
+    ],
+    "SFX_Level_MasterCadet": [
+      79000,
+      7941.224489795914
+    ],
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "~4/CIN_HumanWalking.mp3": [
+      28250,
+      2063.673469387755
+    ],
+    "~4/CIN_DoorOpen.mp3": [
+      69250,
+      1097.142857142856
+    ]
+  }
+}

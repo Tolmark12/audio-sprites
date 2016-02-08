@@ -1,0 +1,122 @@
+      # 1 Tagged BCA PCA Assets  ==========================================
+      -
+        duration: {kind: dialogue }
+        dialogue:
+          timeline:
+            - {action: tech-ws }
+            - {action: operator-ws }
+            - {action: con-sys }
+            - {action: com-rack }
+            - {action: control-ns }
+            - {action: tape-back }
+            - {action: c-app-server }
+            - {action: c-app-server2 }
+            - {action: a }
+          defaults:
+            next: 1000
+          actions:
+            operator-ws:
+              pos: operator-ws-hit
+              action:
+                - {cmd: highlight, data: {id: operator-ws, level: blue } }
+                - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
+            tech-ws:
+              pos: tech-ws-hit
+              action:
+                - {cmd: highlight, data: {id: tech-ws, level: blue } }
+                - {cmd: label.add, data: {id: tech-ws-hit, text: Technician Workstation, face: bottom } }
+            con-sys:
+              pos: con-sys-hit
+              action:
+                - {cmd: highlight, data: {id: con-sys, level: blue} }
+                - {cmd: label.add, data: {id: con-sys-hit, text: Control System, face: top, arrow: right} }
+            com-rack:
+              pos: com-rack-hit
+              action:
+                - {cmd: highlight, data: {id: com-rack, level: blue} }
+                - {cmd: label.add, data: {id: com-rack-hit, text: Communications Equipment, face: top, arrow: right} }
+            control-ns:
+              pos: control-ns-hit
+              action:
+                - {cmd: highlight, data: {id: control-ns, level: blue } }
+                - {cmd: label.add, data: {id: control-ns-hit, text: Network Switch, face: bottom} }
+            tape-back:
+              pos: tape-back-hit
+              action:
+                - {cmd: highlight, data: {id: tape-back, level: blue} }
+                - {cmd: label.add, data: {id: tape-back-hit, text: Tape Backup Server, face: left } }
+            c-app-server:
+              pos: c-app-server-hit
+              action:
+                - {cmd: highlight, data: {id: c-app-server, level: blue} }
+                - {cmd: label.add, data: {id: c-app-server-hit, text: Control System Application Server 1, face: bottom, arrow: right } }
+            c-app-server2:
+              pos: c-app-server2-hit
+              action:
+                - {cmd: highlight, data: {id: c-app-server2, level: blue} }
+                - {cmd: label.add, data: {id: c-app-server2-hit, text: Control System Application Server 2, face: bottom, arrow: right } }
+            a:
+              pos: []
+              next: 5000
+      # 1 Tagged BCA PCA Assets  ==========================================
+      -
+        action:
+          - {cmd: unhighlight.all }
+          - {cmd: label.hide, data: {id: all}  }
+        duration: {kind: time, seconds: 1}
+      # 1 Tagged BCA PCA Assets  ==========================================
+      -
+        duration: {kind: dialogue }
+        dialogue:
+          timeline:
+            - {action: map-computer }
+            - {action: file-server }
+            - {action: printer }
+            - {action: a }
+          defaults:
+            next: 1000
+          actions:
+            file-server:
+              pos: "file-server-hit"
+              action:
+                - {cmd: highlight, data: {id: file-server, level: orange} }
+                - {cmd: label.add, data: {id: file-server-hit, text: File Server, face: top, arrow: right} }
+            map-computer:
+              pos: "map-computer-hit"
+              action:
+                - {cmd: highlight, data: {id: map-computer, level: orange} }
+                - {cmd: label.add, data: {id: map-computer-hit, text: Map Computer, face: bottom, arrow: right} }
+            printer:
+              pos: "printer-hit"
+              action:
+                - {cmd: highlight, data: {id: printer, level: orange} }
+                - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
+            a:
+              pos: []
+              next: 5000
+      # 1 BCSI Assets Tour  ==========================================
+      -
+        duration: {kind: dialogue }
+        dialogue:
+          timeline:
+            - {action: filing-cabinet }
+            - {action: map }
+            - {action: monitor }
+          defaults:
+            next: 1000
+          actions:
+            filing-cabinet:
+              pos: "filing-cabinet-hit"
+              action:
+                - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
+                - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
+            map:
+              pos: "map-hit"
+              action:
+                - {cmd: highlight, data: {id: map, level: yellow} }
+                - {cmd: label.add, data: {id: map-hit, text: System Map, face: bottom, arrow: right} }
+            monitor:
+              pos: "monitor-hit"
+              action:
+                - {cmd: highlight, data: {id: monitor, level: yellow} }
+                - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }

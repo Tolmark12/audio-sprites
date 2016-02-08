@@ -1,0 +1,82 @@
+title: Choose your Port Defenses
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [50, 70]
+  actions:
+    a:
+      emo: happy
+      text: "I love how it tapes. I love the sound it makes."
+      audio: Story_4_Ctanlee_4.mp3
+    b:
+      emo: happy
+      text: "Sticky, gooey, gummy, stuck. Want to use that port? Sorry - out of luck."
+      audio: Story_4_Ctanlee_5.mp3
+    c:
+      emo: surprize
+      text: "Call it ump, call it right. Eject that drive right out of sight."
+      audio: Story_4_Ctanlee_6.mp3
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: Physical Port Security
+          choice: port
+        click:
+          - {cmd: slides.next-slide}
+        intro:
+        title: Choose your Port Defenses
+        subTitle: "We'll install two things: 1.) Software firewalls on all assets to close unnecessary logical ports. 2.) Plug-in protections on the physical ports. We have a few CIP-compliant physical port protections to choose from:"
+        submitBtn: {txt: Install, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  port: duct-tape
+                  portBuild: ~3/duct_tape_build.json
+                  portInstall: ~3/duct_tape_install.json
+                  portDefend: ~3/duct_tape_defend.json
+                  portSFX: ~3/SFX_PhysicalPortSecurity_DuctTape.mp3
+            btnTxt: Port Duct Tape
+            icon: mini-duct-tape
+            blurb: "<span>Celebrity Sponsor:</span> MacGyver <br/><span>Also Fixes:</span> Everything"
+            details: "Do we really need to explain this?"
+            quote: The Defender's Secret Weapon
+          -
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: setvars
+                data:
+                  port: kragle
+                  portBuild: ~3/kragle_build.json
+                  portInstall: ~3/kragle_install.json
+                  portDefend: ~3/kragle_defend.json
+                  portSFX: ~3/SFX_PhysicalPortSecurity_TheKragle.mp3
+            btnTxt: The Kragle
+            icon: mini-kragle
+            blurb: "<span>Variants:</span> Regular Glue, Super Glue,<br/>Ludicrous Glue. <br/><span>Other Uses:</span> Fixing Cuts, Fingernails, and Pantyhose Runs."
+            details: "Are people always plugging things into your assets and messing with your stuff? Make those physical ports permanently unavailable to people and robots alike with a good injection of this sticky filler."
+            quote: Every port is awesome!
+          -
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: setvars
+                data:
+                  port: umpire
+                  portBuild: ~3/umpire_build.json
+                  portInstall: ~3/umpire_install.json
+                  portDefend: ~3/umpire_defend.json
+                  portSFX: ~3/SFX_PhysicalPortSecurity_PortUmpie.mp3
+            btnTxt: Port Umpire
+            icon: mini-umpire
+            blurb: "<span>Ejections:</span> Too Many to Count <br/><span>Bad Calls:</span> Never!"
+            details: "Officiates the game of asset port defense, ensuring Defenders follow the rules when they throw devices at our physical ports. Following the grand tradition of the game, any illegal devices are promptly ejected."
+            quote: Product Version 5.0 - The Umpire Strikes Back

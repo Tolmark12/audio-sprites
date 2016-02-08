@@ -1,0 +1,48 @@
+title: One More Time
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [200, 50]
+  actions:
+    a:
+      emo: happy
+      text: "Sorry! The information did leave our facility, so we have a problem."
+      audio: Story_2_Ctanlee_28.mp3
+    b:
+      emo: sad
+      text: "Yes! The issue was found, fixed with the awareness poster, and the Compliance Team will self-report a violation."
+      audio: Story_2_Ctanlee_X42.mp3
+    c:
+      emo: surprize
+      text: "Nope! The information did leave the facility, but we caught the issue."
+      audio: Story_2_Ctanlee_30.mp3
+ux:
+  components:
+    -
+      kind: simple-selection
+      config:
+        title: One More Time
+        subTitle: So what do you think this is?
+        items:
+          -
+            btnTxt: Good Catch
+            click: {cmd: ctanlee.activate, data: a}
+          -
+            btnTxt: Self-Report
+            # On Click, we add an event listener to ctanlee. After his audio is complete,
+            # we run all the actions listed below in "action"
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: ctanlee.add-event-listener
+                data:
+                  event: complete
+                  action:
+                    - {cmd: slides.next-slide}
+                    - {cmd: ctanlee.gohome}
+          -
+            btnTxt: Violation
+            # On Click, we add an event listener to ctanlee. After his audio is complete,
+            # we run all the actions listed below in "action"
+            click: {cmd: ctanlee.activate, data: c}

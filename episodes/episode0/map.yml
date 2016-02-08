@@ -1,0 +1,423 @@
+episode: 0
+title: Episode 0
+subtitle: Organizing Our Defenses
+rankId: recruit
+skipSlate: true
+nextRankId: cadet
+
+# CHAPTER 1
+chapters:
+  -
+    ctanlee: !!inc/file ./episodes/global/_ctanlee.yaml
+    title: Loading Introduction
+    kind: intro
+    slides:
+      # Animation Split Screen Advance ==========================================
+      -
+        fid: intro
+        sfx:
+          - {content: ~g/Intro_Credits.mp3, volume: 0.2}
+          - {content: ~0/SFX_Defender_Door_Open.mp3, delay: 7300, volume: 0.8 }
+        action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
+        movie:
+          layers:
+            - {depth: 1, content: ~0/splitdoor.json, events: [complete] }
+        duration: {kind: listen, event: layer.1.complete}
+      # Dialogue PlaySound ==========================================
+      -
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Are you listening?
+                btnConfig: {width: 160, lines: true}
+                btns:
+                  -
+                    txt: Proceed
+                    click: {cmd: slides.next-slide}
+            -
+              kind: sound-test
+              config:
+                sound: SFX_SoundTestButton.mp3
+
+        duration: {kind: ux}
+      # Animation Load Warcore ==========================================
+      -
+        title: Load Warcore
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
+        movie:
+          layers:
+            - {depth: 1, background: black, content: commandline.json,}
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              next: 6000
+              text: Welcome to the WarCore. Booting system...
+              actor: warcore
+              audio: Story_1_Warcore_1.mp3
+            b:
+              text: The system is ready for login. I will now access your records.
+              actor: warcore
+              audio: Story_1_Warcore_2.mp3
+        duration: {kind: dialogue }
+      # Animation Quarantine ==========================================
+      -
+        title: Quarantine
+        movie:
+          layers:
+            - {depth: 1, content: quarantine.json}
+        action: [{cmd: ctanlee.show}]
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+          actions:
+            a:
+              text: Your user has not logged in before. You'll be quarantined until your authorization records are confirmed.
+              actor: warcore
+              audio: Story_1_Warcore_3.mp3
+            b:
+              next: 6000
+              text: I'll send for the WarCore authority now. Alerting CTANLEE!
+              actor: warcore
+              audio: Story_1_Warcore_4.mp3
+            c:
+              pos: [513,384,0]
+              text: Hello potentially dangerous entity! I am CTANLEE.
+              audio: Story_1_Ctanlee_1.mp3
+            d:
+              next: 8900
+              pos: [513,384,0]
+              text: "I'm in charge of training new CIP Defenders. I'm sorry for the quarantine, but I do need to confirm you are authorized before you can enter the WarCore."
+              audio: Story_1_Ctanlee_2.mp3
+            e:
+              next: 5900
+              pos: [513,384,0]
+              text: "The warcore will now confirm your identity."
+              audio: Story_1_Ctanlee_4.mp3
+        duration: {kind: dialogue }
+      # Dialogue Clearance Level  ==========================================
+      -
+        title: Authorization Results
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              next: 700
+              emo: surprise
+              pos: [340,300,1000]
+            b:
+              emo: right
+              pos: [320,300,0]
+              text: "Critical Infrastructure Protection Version Five clearance! Impressive! This is the highest level of security training available in the WarCore. Your company must have a lot of confidence in you."
+              audio: Story_1_Ctanlee_7.mp3
+              txtPos: left
+            c:
+              next: 1200
+              emo: right
+              pos: [320,300,0]
+            d:
+              pos: [320,300,0]
+              text: "Let's get rid of this quarantine and initiate you with a killer call sign."
+              audio: Story_1_Ctanlee_8.mp3
+              txtPos: left
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Authorization Results
+                btnConfig: {lines: true}
+                theme: grid-room
+                btns:
+                  -
+                    txt: Continue
+                    click:
+                      - {cmd: slides.next-slide}
+            -
+              kind: personal-info-intro
+              config: {}
+        duration: {kind: ux}
+      # Dialogue Call Sign  ==========================================
+      -
+        title: Call Sign Selection
+        movie:
+          layers:
+            - {depth: 1, content: clear }
+            - {depth: 1, background: black }
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [513,154]
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Call Sign Selection
+                btnConfig: {lines: true, width: 190}
+                btns:
+                  -
+                    txt: Use This Call Sign
+                    click:
+                      - {cmd: save.callsign}
+            -
+              kind: call-sign-select
+              config: {}
+        duration: {kind: ux}
+      # Call Sign and Animation Power Grid  ==========================================
+      -
+        title: Powergrid
+        action: [ {cmd: chrome.show}, {cmd: chrome.showname} ]
+        movie:
+          layers:
+            - {depth: 1, content: powergrid1.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+          actions:
+            a:
+              emo: left
+              pos: [400,50]
+              next: 5000
+              text: "Your name, call sign and training rank will be shown here."
+              audio: Story_1_Ctanlee_9.mp3
+            b:
+              pos: [430,200]
+              text: "With CIPv5 clearance, it's time for you to learn the reason for this training."
+              audio: Story_1_Ctanlee_10.mp3
+            c:
+              pos: [450,450]
+              text: "We operate part of the North American Bulk Electric System - this system is made up of power plants, transmission substations, control centers and their supporting operations."
+              audio: Story_1_Ctanlee_11.mp3
+            d:
+              emo: left
+              pos: [500,200]
+              text: "All these facilities working together provide power to homes, businesses, industry, and other vital services."
+              audio: Story_1_Ctanlee_12.mp3
+            e:
+              pos: [170,310]
+              text: "But there's a problem. Hackers, terrorists, and other nasty people want to disrupt our ability to provide this power."
+              audio: Story_1_Ctanlee_12b1.mp3
+            f:
+              pos: [270,310]
+              text: "These facilities are highly connected and automated through computer technology and therefore vulnerable to a cyber-attack."
+              audio: Story_1_Ctanlee_12b2.mp3
+            g:
+              pos: [400,300]
+              text: "Just imagine a day without power."
+              audio: Story_1_Ctanlee_12c.mp3
+            h:
+              pos: [350,400]
+              text: "To protect this critical infrastructure, the government ordered the North American Electric Reliability Corporation - NERC - to create the Critical Infrastructure Protection standards that define how each utility must protect their facilities from attack."
+              audio: Story_1_Ctanlee_12d.mp3
+        duration: {kind: dialogue }
+      # Animation Sektimus Launch  ==========================================
+      -
+        sfx:
+          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3, delay: 26800, volume: 1 }
+        action:
+          - {cmd: chrome.hide}
+          - {cmd: sound.fadeout, data: {delay: 15000, duration: 500, slot: ambience} }
+          - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3, volume: .4, delay: 15000, slot: sektimus, destroy: true} }
+        title: Sektimus
+        movie:
+          layers:
+            - {depth: 1, content: sektimus_pngs.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          actions:
+            a:
+              next: 500
+              pos: [350,400]
+            b:
+              pos: [350,400]
+              text: "That's the official story from the government. But there's more to the story that I can reveal with your clearance level - and the full truth is far more serious."
+              audio: Story_1_Ctanlee_12e.mp3
+            c:
+              emo: right
+              pos: [150,420]
+              text: "Far across the galaxy, an ancient evil has set its eyes upon us. The robot Overmind Sektimus desires to attack Earth and enslave all humankind. He has launched his Metal Swarm, the greatest space armada ever constructed by robots, against our planet. "
+              audio: Story_1_Ctanlee_16.mp3
+        duration: {kind: dialogue }
+      # Animation Robot Introduction  ==========================================
+      -
+        action: {cmd: playsound, data: {content: ~0/SFX_Crater.mp3, volume: 1, slot: crater} }
+        movie:
+          layers:
+            - {depth: 1, content: smoke1.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+          actions:
+            a:
+              pos: [350,400]
+              text: "Sektimus desires to weaken us , so he sent advance forces to destroy Earth's most critical infrastructure - our power grid - before the Metal Swarm arrives."
+              audio: Story_1_Ctanlee_17.mp3
+            b:
+              emo: right
+              pos: [250,500]
+              text: "Several models of robots were sent in this advance force, each specifically designed to attack an aspect of the computer systems that run our facilities."
+              audio: Story_1_Ctanlee_18a.mp3
+            c:
+              pos: [250,500]
+              text: "These robots and their human allies have targeted us."
+              audio: Story_1_Ctanlee_18b.mp3
+            d:
+              pos: [380,400]
+              text: "The government is aware of Sektimus and his advance forces. They secretly directed NERC to create the CIP Standards to help defend against their attacks."
+              audio: Story_1_Ctanlee_19.mp3
+            e:
+              emo: left
+              pos: [550,500]
+              text: "So while the CIP Standards protect us from hackers and terrorists on Earth, these are mere pawns in an intergalactic struggle that threatens all humankind."
+              audio: Story_1_Ctanlee_19b1.mp3
+            f:
+              pos: [550,300]
+              text: "CIP is Earth's secret weapon against this threat."
+              audio: Story_1_Ctanlee_19b2.mp3
+        duration: {kind: dialogue }
+      # Dialogue Gut Check  ==========================================
+      -
+        action:
+          - {cmd: sound.fadein, data: {delay: 1000, duration: 500, slot: ambience} }
+          - {cmd: sound.fadeout, data: {duration: 500, slot: crater, detroy: true} }
+        title: Gut Check
+        movie:
+          layers:
+            - {depth: 1, content: clear }
+            - {depth: 0, background: black }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              pos: [513,384,1000]
+              next: 1200
+            b:
+              pos: [513,384]
+              text: "You now know the full story about CIP - How are you feeling?"
+              audio: Story_1_Ctanlee_21.mp3
+            c:
+              pos: [513,384]
+              text: "Pull yourself together soldier! Take a deep breath and let's crack on."
+              audio: Story_1_Dialogue_Panicking.mp3
+              next: {cmd: slides.next-slide}
+            d:
+              pos: [513,384]
+              text: "Swallow your spew and take heed: mouthpuke is a sign you are taking this seriously."
+              audio: Story_1_Dialogue_Puke.mp3
+              next: {cmd: slides.next-slide}
+            e:
+              pos: [513,384]
+              text: "That's the spirit!"
+              audio: Story_1_Dialogue_Spirit.mp3
+              next: {cmd: slides.next-slide}
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Gut Check
+                btnConfig: {lines: true, width: 153}
+                btns:
+                  -
+                    txt: Panicking
+                    click: {cmd: ctanlee.activate, data: c}
+                  -
+                    txt: I Threw Up a Bit in My Mouth
+                    click: {cmd: ctanlee.activate, data: d}
+                  -
+                    txt: Let's Kick<br/>Some Bot
+                    click: {cmd: ctanlee.activate, data: e}
+            -
+              kind: gut-check
+              config: {}
+        duration: {kind: ux }
+      # Introduce Navigation Ranks  ==========================================
+      -
+        action: [{cmd: chrome.show}, {cmd: chrome.showepisodes}]
+        movie:
+          layers:
+            - {depth: 0, content: chip.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              pos: [200,500]
+              text: "Sektimus' latest battle plans were intercepted by NERC special agents who used them to create CIP version 5, the version you're about to learn."
+              audio: Story_1_Ctanlee_20.mp3
+              next: 9500
+            b:
+              emo: left
+              pos: [680,450]
+              text: "CIP puts you at the center of our defenses and I will teach you these defenses in 5 easy episodes."
+              audio: Story_1_Ctanlee_22.mp3
+            c:
+              emo: left
+              pos: [700,100]
+              text: "You will learn using the WarCore's fully-functional battle simulator to protect a simulated facility from attacks by Sektimus' advance force."
+              audio: Story_1_Ctanlee_24.mp3
+            d:
+              pos: [350,300]
+              text: "Cadet, by the end of this training you will be a full CIP Defender. Let us begin Episode 1 and load the simulator."
+              audio: Story_1_Ctanlee_25.mp3
+        duration: {kind: dialogue }
+      # Rank Advance ==========================================
+      -
+        action: {cmd: chrome.hide}
+        sfx:
+          - {content: ~g/SFX_Level_Cadet.mp3, volume: 1}
+        movie:
+          layers:
+            - {depth: 0, background: black, content: ~g/cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.0.complete }

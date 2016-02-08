@@ -1,0 +1,55 @@
+{
+  "urls": [
+    "./sprites/episode1/chapter1/sprite.mp3"
+  ],
+  "sprite": {
+    "Story_2_Ctanlee_X43.mp3": [
+      0,
+      6739.591836734694
+    ],
+    "Story_2_Ctanlee_1.mp3": [
+      7250,
+      3213.061224489795
+    ],
+    "Story_2_Ctanlee_2.mp3": [
+      11500,
+      3056.3265306122444
+    ],
+    "Story_2_Ctanlee_3.mp3": [
+      15750,
+      4493.061224489797
+    ],
+    "~1/SFX_FacilityType_Substation.mp3": [
+      21000,
+      7601.632653061223
+    ],
+    "~1/SFX_FacilityType_GenerationPlant.mp3": [
+      29250,
+      7784.489795918368
+    ],
+    "~1/SFX_FacilityType_ControlCenter.mp3": [
+      37500,
+      7601.632653061223
+    ],
+    "~g/MU_Ambient_Facility.mp3": [
+      45750,
+      153312.6530612245
+    ],
+    "Story_2_Ctanlee_4.mp3": [
+      200000,
+      3291.4285714285825
+    ],
+    "Story_2_Ctanlee_31.mp3": [
+      204250,
+      4075.1020408163185
+    ],
+    "Story_2_Ctanlee_32.mp3": [
+      209500,
+      4022.857142857134
+    ],
+    "Story_2_Ctanlee_33.mp3": [
+      214750,
+      4545.3061224489775
+    ]
+  }
+}

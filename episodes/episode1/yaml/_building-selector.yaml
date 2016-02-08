@@ -1,0 +1,79 @@
+title: Pick Your Facility
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [50, 70]
+  actions:
+    a:
+      emo: right
+      text: "My grandfather twice removed was a circuit breaker."
+      audio: Story_2_Ctanlee_1.mp3
+    b:
+      emo: right
+      text: "I dated a boiler once. She was hot."
+      audio: Story_2_Ctanlee_2.mp3
+    c:
+      emo: right
+      text: "The nerve center of the BES. My 1s and 0s are tingling."
+      audio: Story_2_Ctanlee_3.mp3
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: Facility Type
+          choice: facility
+        hasLabels: true
+        click:
+          - {cmd: slides.next-slide}
+        title: Pick Your Facility
+        subTitle: The <a data-label="cip">Critical Infrastructure Protection (CIP)</a> Standards require that we protect significant facilities on the <a data-label="bes">Bulk Electric System (BES)</a>. We classify our facilities in three categories.<ol><li><a data-label="high" class="new">High Impact</a> are big control centers</li><li><a data-label="medium" class="new">Medium Impact</a> are large substations and generation plants; and small control centers </li><li><a data-label="low" class="new">Low Impact</a> are everything else.</li></ol>Please add a Medium Impact facility to the simulator. Pick whichever one you like! We'll teach the same principles with any choice.
+        submitBtn: {txt: Load Facility, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  facility: substation
+                  facilityBuild: ~1/substation_facility_build.json
+                  facilityLoop: ~1/substation_facility_loop.json
+                  facilitySFX: ~1/SFX_FacilityType_Substation.mp3
+            btnTxt: Substation
+            icon: mini-substation
+            blurb: "<span>Rating:</span> 345kV <br/><span>Tough and Gritty Workers:</span> Yes <br/><span>CIP Impact:</span> Medium Impact Facility"
+            details: "A large substation critical to the operation of the Bulk Electric System - it even has a small control room. That large circuit breaker makes me tingly all over! <br/><br/>Work location of some of the hottest workers this side of the interconnection."
+            quote: Hard hats, arc flash protection gear, and rubber lineman's gloves mean the sweat never stops at this facility.
+          -
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: setvars
+                data:
+                  facility: generation-plant
+                  facilityBuild: ~1/generation_facility_build.json
+                  facilityLoop: ~1/generation_facility_loop.json
+                  facilitySFX: ~1/SFX_FacilityType_GenerationPlant.mp3
+            btnTxt: Generation Plant
+            icon: mini-generation
+            blurb: "<span>Collar Color:</span> Mostly Blue and 100% Proud Of It <br/><span>Capacity:</span> 1600MW <br/><span>CIP Impact:</span> Medium Impact Facility"
+            details: "A large fossil plant. If the unit doesn't look big enough to generate that many MW, use your imagination. This is a simulator after all. <br/><br/>Coal ash, blistering steam, high voltage electricity, and enough kinetic energy to tear a building apart?"
+            quote: If Mike Rowe started a show called Dangerous Jobs, these workers would be the stars.
+          -
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: setvars
+                data:
+                  facility: control-center
+                  facilityBuild: ~1/control_facility_build.json
+                  facilityLoop: ~1/control_facility_loop.json
+                  facilitySFX: ~1/SFX_FacilityType_ControlCenter.mp3
+            btnTxt: Control Center
+            icon: mini-control-center
+            blurb: "<span>Monitor to Operator Ratio:</span> 8:1 <br/><span>Favorite Beverage:</span> Coffee <br/><span>Second Favorite Beverage:</span> Coffee<br/><span>CIP Impact:</span> Medium Impact Facility"
+            details: "Controls critical substations and generation plants and houses the Energy Management System. This particular center also operates a sweet anti-spacecraft Tesla Cannon, critical to the defense of the BES from the bots. With this setup you could run a killer game of tic-tac-toe or Global Thermonuclear War."
+            quote: Would you like to play a game?

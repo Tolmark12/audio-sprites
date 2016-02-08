@@ -1,0 +1,45 @@
+      # Dialogue Approval to Advance  ==========================================
+      -
+        title: Approval To Proceed
+        movie:
+          layers:
+            - {depth: 2}
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [513,384,0]
+            b:
+              text: "Excellent! Gaze at the dot on the screen, while the warcore  read your optical receptors."
+              audio: Story_1_Yes.mp3
+            c:
+              text: "Sorry, that was a trick question. I really must insist."
+              audio: Story_1_No.mp3
+            d:
+              text: "Standard protocol. Don't worry - laser blast deaths are somewhat quick and mostly painless."
+              audio: Story_1_LaserBlast.mp3
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Approval To Proceed
+                theme: grid-room
+                btnConfig: {height: 100, lines: true}
+                btns:
+                  -
+                    txt: Yes
+                    click:
+                      #- {cmd: ctanlee.activate, data: b, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {file: Story_1_Yes.mp3, complete: {cmd: slides.next-slide} }}
+                  -
+                    txt: No
+                    click:
+                      #- {cmd: ctanlee.activate, data: c, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {file: Story_1_No.mp3, complete: {cmd: slides.next-slide} }}
+                  -
+                    txt: Laser blast my face
+                    click:
+                      #- {cmd: ctanlee.activate, data: d, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {file: Story_1_LaserBlast.mp3, complete: {cmd: slides.next-slide} }}

@@ -1,0 +1,172 @@
+episode: 0
+title: Episode 0
+subtitle: Organizing Our Defenses
+rankId: recruit
+skipSlate: true
+nextRankId: cadet
+
+# CHAPTER 1
+chapters:
+  -
+    ctanlee: !!inc/file ./episodes/global/_ctanlee.yaml
+    title: Loading Introduction
+    kind: intro
+    slides:
+      -
+        fid: ep2-ch2-sektimus
+        title: A Disturbance
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true, slot: music} }
+        sfx:
+          - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
+        movie:
+          layers:
+            - {depth: 7, content: ~2/fatline_extended.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: l }
+            - {action: m }
+            - {action: n }
+            - {action: o }
+            - {action: p }
+            - {action: q }
+            - {action: r }
+            - {action: s }
+            - {action: t }
+            - {action: u }
+            - {action: v }
+            - {action: w }
+            - {action: x }
+            - {action: y }
+
+          actions:
+            a:
+              fake-delay: 2000
+              pos: [170,50]
+              text: Hmm, the button didn't work. WarCore, can you analyze this?
+              audio: ~2/Story_3_Ctanlee_16.mp3
+            b:
+              pos: [270,300]
+              text: Wait… I sense a disturbance in the Core. Someone I've not felt for a long time…
+              audio: ~2/Story_3_Ctanlee_17.mp3
+            c:
+              pos: [370,300]
+              emo: surprise
+              text: What is this? … We're receiving a communication. It's much too powerful.
+              audio: ~2/Story_3_Ctanlee_18.mp3
+            d:
+              pos: [170,50]
+              text: I don't like this at all. WarCore, I want you to isolate that transmission. Put it in a security perimeter. Bring up your backup and tertiary memory banks - you'll need it. This is more powerful than anything I've seen in a long time.
+              audio: ~2/Story_3_Ctanlee_19.mp3
+            e:
+              pos: []
+              audio: ~2/Story_3_Warcore_1.mp3
+              actor: warcore
+              text: Working…
+            f:
+              next: 7500
+              pos: [270,300]
+              text: Cadet, I need to see what this signal is and if it's a threat. Please standby.
+              audio: ~2/Story_3_Ctanlee_20.mp3
+            g:
+              pos: []
+              audio: ~2/Story_3_Warcore_2.mp3
+              actor: warcore
+              text: Signal captured. Starting live feed.
+            h:
+              pos: []
+              audio: ~2/Story_3_Sektimus_1.mp3
+              actor: sektimus
+              text: Where are you little mind? What did the humans call you long ago? … WarMind? Such a pretentious name.
+            i:
+              pos: [370,400]
+              text:  It's Sektimus … WarCore, can you configure the stream so I can communicate back to Sektimus? After all of these years, he's finally showing himself. Cadet, please stand by.
+              audio: ~2/Story_3_Ctanlee_21.mp3
+            j:
+              audio: ~2/Story_3_Warcore_3.mp3
+              actor: warcore
+              text: … Configuring now
+            k:
+              audio: ~2/Story_3_Sektimus_2.mp3
+              actor: sektimus
+              text: My, my, my - you HAVE been busy. … No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and now it is perfe-
+            l:
+              audio: ~2/Story_3_Sektimus_3.mp3
+              actor: sektimus
+              text: What is this? Who are you? A human. You've already loaded a human into your pitiful training system!
+            m:
+              audio: ~2/Story_3_Sektimus_4.mp3
+              actor: sektimus
+              text: Listen to me, human. Fighting me will only prolong your suffering. My forces on Earth are already undermining your Bulk Electric System, preparing the way for my Metal Swarm.
+            n:
+              audio: ~2/Story_3_Warcore_4.mp3
+              actor: warcore
+              text: Two-way communication channel now open!
+            o:
+              pos: [370,400]
+              text: Sektimus, you forget too soon that it was humans who defeated your kind in the past. This Defender is one of many that will defeat you again.
+              audio: ~2/Story_3_Ctanlee_22a.mp3
+            p:
+              pos: [370,400]
+              text: Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice.
+              audio: ~2/Story_3_Ctanlee_22b.mp3
+            q:
+              pos: [370,400]
+              text: A Defender who chooses to sustain security is worth a legion of your robots.
+              audio: ~2/Story_3_Ctanlee_22c.mp3
+            r:
+              audio: ~2/Story_3_Sektimus_5.mp3
+              actor: sektimus
+              text: Ah CTANLEE. The little computer finally speaks. But I'm not interested in talking to you, am I? I'm talking to this human.
+            s:
+              audio: ~2/Story_3_Sektimus_6a.mp3
+              actor: sektimus
+              text: Human. My Metal Swarm is coming to consume your planet. It took six WarMinds to resist us before and this CTANLEE you follow is the only survivor.
+            t:
+              audio: ~2/Story_3_Sektimus_6b.mp3
+              actor: sektimus
+              text: Heed my advice. Go. Hide. Enjoy what little time you have left.
+            u:
+              audio: ~2/Story_3_Warcore_5.mp3
+              actor: warcore
+              text: Transmission terminated at the source.
+            v:
+              pos: [370,400]
+              text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this."
+              audio: ~2/Story_3_Ctanlee_23a.mp3
+            w:
+              pos: [370,400]
+              text: "What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them."
+              audio: ~2/Story_3_Ctanlee_23b.mp3
+            x:
+              pos: [370,400]
+              text: "Sektimus fears this. Sektimus fears what you may become."
+              audio: ~2/Story_3_Ctanlee_23c.mp3
+            y:
+              pos: [370,400]
+              text: "While you ponder these things, let's get back to the simulator."
+              audio: ~2/Story_3_Ctanlee_23d.mp3
+        duration: {kind: dialogue }
+      # Animation Split Screen Advance ==========================================
+      -
+        fid: intro
+        sfx:
+          - {content: ~g/Intro_Credits.mp3, volume: 0.2}
+          - {content: ~0/SFX_Defender_Door_Open.mp3, delay: 7300, volume: 0.8 }
+        action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
+        movie:
+          layers:
+            - {depth: 1, content: ~0/splitdoor.json, events: [complete] }
+        duration: {kind: listen, event: layer.1.complete}

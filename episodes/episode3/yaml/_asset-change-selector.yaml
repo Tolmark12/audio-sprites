@@ -1,0 +1,81 @@
+fid: ep3-ch3-i
+title: Choose Your Asset Change Tools
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [50, 70]
+  actions:
+    a:
+      emo: happy
+      text: "Doooouuuubbblllee Deuce!"
+      audio: Story_4_Ctanlee_25.mp3
+    b:
+      emo: happy
+      text: "Great Scott!"
+      audio: Story_4_Ctanlee_26.mp3
+    c:
+      emo: surprize
+      text: "Jules Verne would be proud."
+      audio: Story_4_Ctanlee_27.mp3
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: Asset Change Tool
+          choice: change
+        click:
+          - {cmd: slides.next-slide}
+        intro:
+        hasLabels: true
+        title: Choose Your Asset Change Tools
+        subTitle: Adding, updating, and disposing assets is usually done by technical Defenders, but it's helpful for all Defenders to see the process so you understand why we don't make changes or remove assets outside the process. <br/><br/>Let's equip Richard and team to manage changes to our <a data-label="crca">CRCAs</a>. We'll install&#58; 1.) Tools and a process to add and update assets 2.) One of three asset disposal devices to eradicate <a data-label="bcsi">BCSI</a>. Choose wisely&#58;
+        submitBtn: {txt: Install, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  change: double_deuce
+                  changeBuild: ~3/double_deuce_build.json
+                  changePass: ~3/double_deuce_pass.json
+                  changeSFX: ~3/SFX_AssetChangeTools_DoubleDeuce.mp3
+            btnTxt: Double Deuce Pulverizer
+            icon: mini-double-deuce
+            blurb: "<span>Testosterone Level:</span> +400% <br/><span>Never Been To:</span> Band Camp"
+            details: "The legendary Double Deuce Pulverizer is guaranteed to blow minds and turn your assets into craters full of nothing but smoking envy and inferiority complex-riddled rubble."
+            quote: Product Jingle - Twice the fists for twice the fun, it's the disposal device for everyone!
+          -
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: setvars
+                data:
+                  change: mr_fusion
+                  changeBuild: ~3/mr_fusion_build.json
+                  changePass: ~3/mr_fusion_pass.json
+                  changeSFX: ~3/SFX_AssetChangeTools_MyFusion.mp3
+            btnTxt: Mr. Fusion
+            icon: mini-mr-fusion
+            blurb: "<span>Flux Capacity:</span> 1.21 <br/><span>Patent Approved:</span> 1985"
+            details: "Emmett Brown Laboratories presents Mr. Fusion, the disposal device for discerning utilities. Heated plasma will incinerate your cyber assets, while generating enough energy to make your coffee or run your time travel device. Buy this one lightning-quick if you know watts good for you."
+            quote: Safety Manual Tip&colon; This is heavy.
+          -
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: setvars
+                data:
+                  change: dematerializer
+                  changeBuild: ~3/dematerializer_build.json
+                  changePass: ~3/dematerializer_pass.json
+                  changeSFX: ~3/SFX_AssetChangeTools_The De-Materializer.mp3
+            btnTxt: The De-Materializer
+            icon: mini-dematerializer
+            blurb: "<span>Projectile Type:</span> Zalinski Shell <br/><span>Firing Method:</span> Pneumatic Rail Gun"
+            details: "New technology from Deflagration Industries promises to completely eradicate BCSI. The De-Materializer will blow Cyber Assets to their constituent atoms, along with everything within a zone of twelve thousand square yards if the blast shield isn't engaged."
+            quote: Auditors are reported to look very favorably on these devices (they like big explosions).

@@ -1,0 +1,39 @@
+title: Apply Your Software Defenses
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [50, 70]
+  actions:
+    a:
+      emo: happy
+      text: "Kills bugs dead."
+      audio: Story_4_Ctanlee_16.m4a
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: Software Defenses
+          choice: patch
+        click:
+          - {cmd: slides.next-slide}
+        intro:
+        title: Apply Your Software Defenses
+        subTitle: "We'll add anti-virus software on each asset. We'll also give Richard a management server inside the ESP to push new security patches and anti-virus signatures to assets."
+        submitBtn: {txt: Install, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  patch: patch_server
+                  patchBuild: ~g/patch_server.json
+                  patchLoop: ~g/patch_install.json
+            btnTxt: Patches the Server
+            icon: mini-patch-server
+            blurb: "Patching, patching, give it thought - it's like armor against the bots."
+            details: "Are your out-of-date systems being hit on by unsavory types? Are you tired of your assets attracting all the wrong kinds of attention? \"Patches\" will apply the latest anti-virus definitions and security patches to your assets, maintaining their good reputation and avoiding the threat of electronically-transmitted viruses."

@@ -1,0 +1,22 @@
+fid: ep5-ch2-sektimus-general-awareness-selector
+title: Do you accept this challenge?
+duration: {kind: ux}
+ux:
+  components:
+    -
+      kind: simple-selection
+      config:
+        title: Do you accept this challenge?
+        items:
+          -
+            btnTxt: Absolutely.
+            click:
+              - {cmd: slides.next-slide}
+          -
+            btnTxt: Yeah, time to get funky!
+            click:
+              - {cmd: slides.next-slide}
+          -
+            btnTxt: Go ahead, bot. Make my day.
+            click:
+              - {cmd: slides.next-slide}

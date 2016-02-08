@@ -1,0 +1,11 @@
+{
+  "urls": [
+    "./sprites/episode5/chapter1/sprite.mp3"
+  ],
+  "sprite": {
+    "~5/CIN_PersonSneaking.mp3": [
+      0,
+      2560
+    ]
+  }
+}

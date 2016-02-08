@@ -1,0 +1,135 @@
+{
+  "urls": [
+    "./sprites/episode3/chapter3/sprite.mp3"
+  ],
+  "sprite": {
+    "CIN_TypingComputerCrash": [
+      31500,
+      2533.87755102041
+    ],
+    "CIN_VehicleRunning": [
+      34750,
+      3343.6734693877524
+    ],
+    "SFX_AttackSlamdown_MimeBot": [
+      41250,
+      2586.1224489795945
+    ],
+    "CIN_AssetConnection": [
+      44500,
+      626.9387755102046
+    ],
+    "CIN_HumanExcited": [
+      45750,
+      2063.6734693877515
+    ],
+    "CIN_ComputerDialOut": [
+      49000,
+      5955.918367346939
+    ],
+    "CIN_RobotHacking": [
+      55250,
+      2377.1428571428573
+    ],
+    "Story_4_Ctanlee_19": [
+      58500,
+      6164.897959183676
+    ],
+    "Story_4_Ctanlee_20": [
+      65750,
+      6896.326530612242
+    ],
+    "Story_4_Ctanlee_21": [
+      73000,
+      3709.387755102043
+    ],
+    "Story_4_Ctanlee_22": [
+      77250,
+      2768.9795918367395
+    ],
+    "CIN_ThrowAwayComputer": [
+      80500,
+      2272.6530612244887
+    ],
+    "CIN_RobotGetComputer": [
+      85000,
+      1410.6122448979618
+    ],
+    "Story_4_Ctanlee_23": [
+      87250,
+      3317.55102040816
+    ],
+    "Story_4_Ctanlee_24": [
+      91500,
+      2377.1428571428573
+    ],
+    "Story_4_Ctanlee_25": [
+      94750,
+      2455.5102040816337
+    ],
+    "Story_4_Ctanlee_26": [
+      98000,
+      1227.7551020408168
+    ],
+    "Story_4_Ctanlee_27": [
+      100250,
+      1959.183673469383
+    ],
+    "SFX_AssetChangeTools_DoubleDeuce": [
+      102500,
+      2377.1428571428573
+    ],
+    "SFX_AssetChangeTools_MyFusion": [
+      105750,
+      2377.1428571428573
+    ],
+    "SFX_AssetChangeTools_The De-Materializer": [
+      109000,
+      2690.612244897963
+    ],
+    "Story_4_Ctanlee_28": [
+      113500,
+      5590.204081632649
+    ],
+    "Story_4_Ctanlee_29": [
+      119750,
+      4414.693877551016
+    ],
+    "Story_4_Ctanlee_30": [
+      125000,
+      4571.428571428583
+    ],
+    "Story_4_Ctanlee_31": [
+      130250,
+      8620.408163265296
+    ],
+    "Story_4_Ctanlee_32": [
+      139500,
+      5825.306122448978
+    ],
+    "SFX_Level_CyberCadet": [
+      145750,
+      7941.224489795928
+    ],
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "~3/CIN_HumanWalking.mp3": [
+      28250,
+      2063.673469387755
+    ],
+    "~3/CIN_DoorOpen.mp3": [
+      39000,
+      1097.142857142856
+    ],
+    "~3/CIN_TreeMoving.mp3": [
+      83750,
+      679.1836734693817
+    ],
+    "~3/CIN_HumanTossing.mp3": [
+      112250,
+      783.6734693877503
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+title: Choose Your Electronic Access Control
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [50, 70]
+  actions:
+    a:
+      emo: happy
+      text: "Your chance to play with fire."
+      audio: Story_3_Ctanlee_27.mp3
+    b:
+      emo: happy
+      text: "Censor those packets."
+      audio: Story_3_Ctanlee_28.mp3
+    c:
+      emo: surprize
+      text: "Go ahead. Make my day … packet."
+      audio: Story_3_Ctanlee_29.mp3
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: Electronic Access Control System
+          choice: eacms
+        click:
+          - {cmd: slides.next-slide}
+        intro:
+        hasLabels: true
+        title: Choose Your Electronic Access Control
+        subTitle: Select a firewall with an intrusion prevention system to create your <a data-label="esp">Electronic Security Perimeter</a>.
+        submitBtn: {txt: Install, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  eacms: burninator
+                  eacmsBuild: ~2/firewall_burn_build.json
+                  eacmsAnimateGood: ~2/firewall_burn_good.json
+                  eacmsAnimateBadUpper: ~2/firewall_burn_bad_upper.json
+                  eacmsAnimateBadLower: ~2/firewall_burn_bad_lower.json
+                  eacmsSFX: ~2/SFX_ElectronicAccess_Burninator.mp3
+            btnTxt: The Burninator
+            icon: mini-burninator
+            blurb: "<span>Temperature:</span> 419 degrees <br/><span>Spontaneous Combustion Chance:</span> 7%"
+            details: "Less-important cyber assets will burn with envy when they see your BCA and PCA protected by the hottest firewall on the market. <br/>Warning: The temperaflame paint job will locally combust skin when touched."
+            quote: No leaning.
+          -
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: setvars
+                data:
+                  eacms: great_wall
+                  eacmsBuild: ~2/firewall_greatwall_build.json
+                  eacmsAnimateGood: ~2/firewall_greatwall_good.json
+                  eacmsAnimateBadUpper: ~2/firewall_greatwall_bad_upper.json
+                  eacmsAnimateBadLower: ~2/firewall_greatwall_bad_lower.json
+                  eacmsSFX: ~2/SFX_ElectronicAccess_GreatFireWall.mp3
+            btnTxt: The Great Wall
+            icon: mini-great-wall
+            blurb: "<span>Manufactured By:</span> Foxconn <br/><span>Facility Tourism:</span> +50%"
+            details: "This firewall stops packets with the force of the Red Army and comes preconfigured to block Facebook, bloggers, and other political malcontents."
+            quote: Chopsticks included.
+          -
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: setvars
+                data:
+                  eacms: gated
+                  eacmsBuild: ~2/firewall_gated_build.json
+                  eacmsAnimateGood: ~2/firewall_gated_good.json
+                  eacmsAnimateBadUpper: ~2/firewall_gated_bad_upper.json
+                  eacmsAnimateBadLower: ~2/firewall_gated_bad_lower.json
+                  eacmsSFX: ~2/SFX_ElectronicAccess_GatedCommunity.mp3
+            btnTxt: Gated Community
+            icon: mini-gated
+            blurb: "<span>Leather Trim:</span> Yes <br/><span>Security Provided:</span> 24x7"
+            details: "Nothing says get off my ESP like the firewall designed by legendary cyber-curmudgeon Jakobs Remington. <br/>Comes with optional Brandy Snifter -"
+            quote: Please don't drink and deny.

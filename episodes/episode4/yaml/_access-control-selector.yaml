@@ -1,0 +1,85 @@
+title: Removing Access
+duration: {kind: ux}
+dialogue:
+  defaults:
+    next: none
+    pos: [50, 70]
+  actions:
+    a:
+      emo: happy
+      text: "That looks … painful."
+      audio: Story_5_Ctanlee_6.mp3
+    b:
+      emo: happy
+      text: "You have nothing to hide, right?"
+      audio: Story_5_Ctanlee_7.mp3
+    c:
+      emo: surprize
+      text: "You'll feel a slight puff of air."
+      audio: Story_5_Ctanlee_8.mp3
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        meta:
+          title: Access Control System
+          choice: access
+        click:
+          - {cmd: slides.next-slide}
+        intro:
+        title: Removing Access
+        subTitle: Let's setup processes and tools to control removing and granting access. Jerry from HR needs help selecting the Personnel Risk Assessment tool he'll be using&#58;
+        submitBtn: {txt: Install, icon: action-btn-fist}
+        items:
+          -
+            click:
+              - {cmd: ctanlee.activate, data: a}
+              -
+                cmd: setvars
+                data:
+                  access: background_probe
+                  accessBuild: ~4/background_probe_build.json
+                  accessPassA: ~4/background_probe_pass_a.json
+                  accessPassB: ~4/background_probe_pass_b.json
+                  accessPassC: ~4/background_probe_pass_c.json
+                  accessSFX: ~4/SFX_AccessControlSystem_BackgroundProbe.mp3
+            btnTxt: The Background Probe
+            icon: mini-background-probe
+            blurb: "<span>Origin:</span> Foreign <br/><span>Batteries:</span> Not Included"
+            details: "Nothing penetrates the murky depths of an employee's history as fully as the Background Probe. Industry leading design detects previous criminal activity and robo-sympathy."
+            quote: Free your mind. The probe is a bit jarring at first, but you get used to it - Neo
+          -
+            click:
+              - {cmd: ctanlee.activate, data: b}
+              -
+                cmd: setvars
+                data:
+                  access: risk_detector
+                  accessBuild: ~4/risk_detector_build.json
+                  accessPassA: ~4/risk_detector_pass_a.json
+                  accessPassB: ~4/risk_detector_pass_b.json
+                  accessPassC: ~4/risk_detector_pass_c.json
+                  accessSFX: ~4/SFX_AccessControlSystem_RiskDetector.mp3
+            btnTxt: The Risk Detector
+            icon: mini-risk-detector
+            blurb: "<span>Pros:</span> TSA Approved <br/><span>Cons:</span> False Positives from Pace Makers, Artificial Joints, Belt Buckles"
+            details: "Nothing says &#34;this facility is safe&#34; like the Risk Detector, detecting risk threats from robots, malicious humans, and criminals all trying to gain access to your facility."
+            quote: The same beloved airport gate check experience - now at your office!
+          -
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: setvars
+                data:
+                  access: voight_kampff
+                  accessBuild: ~4/voight_kampff_build.json
+                  accessPassA: ~4/voight_kampff_pass_a.json
+                  accessPassB: ~4/voight_kampff_pass_b.json
+                  accessPassC: ~4/voight_kampff_pass_c.json
+                  accessSFX: ~4/SFX_AccessControlSystem_VoightKampfDetector.mp3
+            btnTxt: Voight-Kampff Assessor
+            icon: mini-voight-kampff
+            blurb: "<span>Manufacturer:</span> Tyrell Corporation <br/><span>When Powered Off:</span> Dreams of Electric Sheep"
+            details: "Formerly used to detect replicants, the Voight-Kampff Assessor has been re-engineered to determine with 99.987% accuracy any criminal or robotic intentions of the employee."
+            quote: Describe in single words, only the good things that come into your mind about your mother.

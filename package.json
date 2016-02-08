@@ -1,0 +1,15 @@
+{
+  "name": "audio-sprite",
+  "version": "1.0.0",
+  "description": "Audio sprite creator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Parson",
+  "license": "ISC",
+  "dependencies": {
+    "jsonfile": "^2.2.3",
+    "lodash": "^4.2.1"
+  }
+}
